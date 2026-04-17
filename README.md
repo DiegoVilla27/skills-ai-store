@@ -118,23 +118,26 @@ Ensuring software remains immune to regressions.
 
 ---
 
-## 🛠 Automation: `download_skills.sh`
+## 🛠 Automation: `async_agents.sh`
 
-Integrate these skills into any project instantly. No manual copy-pasting required.
+Integrate these skills and instructions into any project instantly. No manual copy-pasting required.
 
 ### Usage:
 ```bash
 # Give execution permissions
-chmod +x download_skills.sh
+chmod +x async_agents.sh
 
-# Download specific skills remotely
-./download_skills.sh react_core web_tailwind clean_code
+# Sync everything (Skills + Instructions)
+./async_agents.sh
 
-# Discover all available skills
-./download_skills.sh
+# Sync specific assets
+./async_agents.sh react_core flutter_coding angular_performance
+
+# Sync only instructions
+./async_agents.sh --instructions
 
 # Use local store (Dev Mode)
-./download_skills.sh --local ~/path/to/store
+./async_agents.sh --local ~/path/to/store
 ```
 
 ---
