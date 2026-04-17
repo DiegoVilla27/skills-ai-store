@@ -20,6 +20,27 @@ This project bridges the gap between general-purpose AI and **specialized engine
 
 ---
 
+## ⚡ Quick Start
+
+Integrate these expert-level engineering standards into any project in seconds.
+
+### 1. Download the Synchronizer
+Run this command in the root of your project:
+```bash
+curl -O https://raw.githubusercontent.com/DiegoVilla27/skills-ai-store/main/async_agents.sh && chmod +x async_agents.sh
+```
+
+### 2. Synchronize Assets
+Sync everything (Skills + Instructions) with one command:
+```bash
+./async_agents.sh
+```
+
+### 3. Start Coding
+Once the `.agents/` folder is created, your AI agent (Antigravity, Cursor, etc.) will automatically adopt the professional standards documented in the store.
+
+---
+
 ## 📂 Project Structure
 
 ```text
