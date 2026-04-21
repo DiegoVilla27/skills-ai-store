@@ -95,6 +95,7 @@ State-of-the-art patterns for the React universe.
 |:---|:---|:---|
 | `react-core` | [SKILL.md](./.agents/skills/react-core/SKILL.md) | React 19, Compiler optimization, and Server Components. |
 | `next-core` | [SKILL.md](./.agents/skills/next-core/SKILL.md) | Next.js 15 App Router, Actions, and Streaming. |
+| `next-routes` | [SKILL.md](./.agents/skills/next-routes/SKILL.md) | Advanced App Router patterns: Parallel & Intercepting routes. |
 | `react-tanstack-query` | [SKILL.md](./.agents/skills/react-tanstack-query/SKILL.md) | v5 Server state, caching, and optimistic updates. |
 | `react-zustand` | [SKILL.md](./.agents/skills/react-zustand/SKILL.md) | Global state with selectors, slices, and persistence. |
 | `react-native-core` | [SKILL.md](./.agents/skills/react-native-core/SKILL.md) | Expo-first mobile development and native performance. |
