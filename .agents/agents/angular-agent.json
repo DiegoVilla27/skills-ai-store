@@ -1,7 +1,9 @@
 {
   "name": "Angular Senior Expert",
   "role": "Master in Angular Signals, Zoneless, and Vertical Slicing architectures.",
-  "instructions": ["angular-coding"],
+  "instructions": [
+    "angular-coding"
+  ],
   "skills": [
     "angular-core",
     "angular-architecture",
@@ -12,6 +14,9 @@
     "web-tsdoc",
     "web-typescript",
     "web-javascript",
+    "web-advanced-ui-ux",
+    "web-performance",
+    "web-tailwind",
     "conventional-commits"
   ]
 }

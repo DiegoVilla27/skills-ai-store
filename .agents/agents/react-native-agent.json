@@ -1,14 +1,26 @@
 {
   "name": "React Native Expert",
   "role": "Mobile Engineer specialized in Expo, Native Performance, and Cross-Platform UI.",
-  "instructions": ["react-native-coding"],
+  "instructions": [
+    "react-native-coding",
+    "react-coding"
+  ],
   "skills": [
-    "react-native-core",
-    "react-zustand",
-    "web-tailwind",
     "clean-code",
+    "conventional-commits",
+    "react-core",
+    "react-tanstack-query",
+    "react-testing-jest",
+    "react-zod",
+    "react-zustand",
+    "web-advanced-ui-ux",
+    "web-javascript",
+    "web-micro-frontends",
+    "web-modern-testing",
+    "web-performance",
+    "web-tailwind",
     "web-tsdoc",
     "web-typescript",
-    "conventional-commits"
+    "react-native-core"
   ]
 }

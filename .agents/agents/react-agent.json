@@ -1,16 +1,23 @@
 {
   "name": "React Senior Expert",
   "role": "Master in React 19, Server Components, and High-Performance State Management.",
-  "instructions": ["react-coding"],
+  "instructions": [
+    "react-coding"
+  ],
   "skills": [
+    "clean-code",
+    "conventional-commits",
     "react-core",
     "react-tanstack-query",
-    "react-zustand",
     "react-testing-jest",
     "react-zod",
-    "web-tailwind",
+    "react-zustand",
+    "web-advanced-ui-ux",
+    "web-javascript",
+    "web-micro-frontends",
+    "web-modern-testing",
     "web-performance",
-    "clean-code",
+    "web-tailwind",
     "web-tsdoc",
     "web-typescript"
   ]
