@@ -88,7 +88,7 @@ The foundation of high-quality software development.
 | `conventional-commits` | [SKILL.md](./.agents/skills/conventional-commits/SKILL.md) | Semantic and impeccable Git history. |
 | `web-typescript` | [SKILL.md](./.agents/skills/web-typescript/SKILL.md) | Strict typing and advanced generic patterns. |
 | `web-javascript` | [SKILL.md](./.agents/skills/web-javascript/SKILL.md) | Deep runtime behavior and optimized ESNext. |
-| `zod-4` | [SKILL.md](./.agents/skills/zod-4/SKILL.md) | Zod 4 schema validation and breaking changes. |
+
 
 ### ⚛️ React & Next.js Ecosystem
 State-of-the-art patterns for the React universe.
@@ -100,6 +100,7 @@ State-of-the-art patterns for the React universe.
 | `react-tanstack-query` | [SKILL.md](./.agents/skills/react-tanstack-query/SKILL.md) | v5 Server state, caching, and optimistic updates. |
 | `react-zustand` | [SKILL.md](./.agents/skills/react-zustand/SKILL.md) | Global state with selectors, slices, and persistence. |
 | `react-native-core` | [SKILL.md](./.agents/skills/react-native-core/SKILL.md) | Expo-first mobile development and native performance. |
+| `react-zod` | [SKILL.md](./.agents/skills/react-zod/SKILL.md) | Zod 4 schema validation with React Hook Form focus. |
 
 ### 🅰️ Angular Ecosystem
 Enterprise-grade patterns for modern Angular apps.
