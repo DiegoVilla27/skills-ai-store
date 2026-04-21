@@ -88,6 +88,7 @@ The foundation of high-quality software development.
 | `conventional-commits` | [SKILL.md](./.agents/skills/conventional-commits/SKILL.md) | Semantic and impeccable Git history. |
 | `web-typescript` | [SKILL.md](./.agents/skills/web-typescript/SKILL.md) | Strict typing and advanced generic patterns. |
 | `web-javascript` | [SKILL.md](./.agents/skills/web-javascript/SKILL.md) | Deep runtime behavior and optimized ESNext. |
+| `zod-4` | [SKILL.md](./.agents/skills/zod-4/SKILL.md) | Zod 4 schema validation and breaking changes. |
 
 ### ⚛️ React & Next.js Ecosystem
 State-of-the-art patterns for the React universe.
