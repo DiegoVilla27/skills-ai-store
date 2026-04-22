@@ -1,4 +1,4 @@
-# 🌌 Skills AI Store
+# 🌌 Agents AI Store
 
 > **"A meticulously curated vault of expert-level AI instructions and engineering patterns designed for the professional modern developer."**
 
