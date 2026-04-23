@@ -163,7 +163,7 @@ Enterprise-grade patterns for modern Angular apps.
 | Skill Name | Documentation | Focus |
 |:---|:---|:---|
 | `angular-core` | [SKILL.md](./angular/skills/angular-core/SKILL.md) | Standalone components and modern Signal inputs. |
-| `angular-signals` | [SKILL.md](./angular/skills/angular-signals/SKILL.md) | Fine-grained reactivity, computed and effects. |
+| `angular-signals` | [SKILL.md](./angular/signals/SKILL.md) | Fine-grained reactivity, computed and effects. |
 | `angular-architecture` | [SKILL.md](./angular/skills/angular-architecture/SKILL.md) | Clean Architecture and Vertical Slicing. |
 | `angular-routing` | [SKILL.md](./angular/skills/angular-routing/SKILL.md) | Functional guards, lazy loading, and deep links. |
 | `angular-http` | [SKILL.md](./angular/skills/angular-http/SKILL.md) | Type-safe API communication and rxResource. |
@@ -173,6 +173,14 @@ Enterprise-grade patterns for modern Angular apps.
 | `angular-ssr-hydration` | [SKILL.md](./angular/skills/angular-ssr-hydration/SKILL.md) | Non-destructive hydration and TransferState. |
 | `angular-animations` | [SKILL.md](./angular/skills/angular-animations/SKILL.md) | DSL animations, coordinated triggers and staggering. |
 | `angular-i18n` | [SKILL.md](./angular/skills/angular-i18n/SKILL.md) | Internationalization and localized formatting. |
+| `angular-material-cdk` | [SKILL.md](./angular/skills/angular-material-cdk/SKILL.md) | Official UI components and low-level behaviors. |
+| `ngrx-signal-store` | [SKILL.md](./angular/skills/ngrx-signal-store/SKILL.md) | Modern state management with SignalStore. |
+| `angular-query` | [SKILL.md](./angular/skills/angular-query/SKILL.md) | Asynchronous server state with TanStack. |
+| `angular-modern-syntax` | [SKILL.md](./angular/skills/angular-modern-syntax/SKILL.md) | New control flow (@if, @for) and @defer. |
+| `angular-security` | [SKILL.md](./angular/skills/angular-security/SKILL.md) | Auth, Interceptors, and Sanitization. |
+| `rxjs-advanced` | [SKILL.md](./angular/skills/rxjs-advanced/SKILL.md) | Mastery of operators and action streams. |
+| `nx-monorepo` | [SKILL.md](./angular/skills/nx-monorepo/SKILL.md) | Scaling with libraries and workspace tags. |
+| `angular-pwa` | [SKILL.md](./angular/skills/angular-pwa/SKILL.md) | Service Workers and offline reliability. |
 
 ### 💙 Flutter Ecosystem
 Comprehensive suite for high-performance Cross-Platform apps.
