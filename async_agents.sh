@@ -85,13 +85,12 @@ download_asset() {
     if [ "$type" = "instructions" ]; then icon="📜"; fi
     if [ "$type" = "agents" ]; then icon="🤖"; fi
     
-    info "Processing $icon $name ($tech/$type)..."
+    # Avoid duplicate processing in the same run if needed (optional)
     
     local target_path="$AGENT_BASE/$tech/$type/$name"
     if [ "$type" = "agents" ]; then
         target_path="$AGENT_BASE/$tech/$type"
     fi
-    mkdir -p "$target_path"
     
     local files=()
     if [ "$type" = "skills" ]; then
@@ -112,7 +111,11 @@ download_asset() {
             if [ "$type" = "agents" ]; then src_file="$source_dir/$tech/$type/$file"; fi
             
             if [ -f "$src_file" ]; then
+                mkdir -p "$target_path"
                 cp "$src_file" "$target_file"
+                if [ "$file" = "${files[1]}" ] || [ "$type" != "skills" ]; then 
+                    info "Processing $icon $name ($tech/$type)..."
+                fi
                 echo "  📁 $file [COPIED]"
                 found=true
             fi
@@ -121,8 +124,13 @@ download_asset() {
             local file_url="$GITHUB_RAW/$BRANCH/.agents/$tech/$type/$name/$file"
             if [ "$type" = "agents" ]; then file_url="$GITHUB_RAW/$BRANCH/.agents/$tech/$type/$file"; fi
             
-            curl -s -f -L "$file_url" -o "$target_file"
-            if [ $? -eq 0 ]; then
+            # Check if file exists before downloading to avoid noise
+            if curl -s --head --fail "$file_url" > /dev/null; then
+                mkdir -p "$target_path"
+                curl -s -L "$file_url" -o "$target_file"
+                if [ "$file" = "${files[1]}" ] || [ "$type" != "skills" ]; then 
+                    info "Processing $icon $name ($tech/$type)..."
+                fi
                 echo "  🌐 $file [DOWNLOADED]"
                 found=true
             fi
@@ -136,6 +144,8 @@ download_asset() {
         if [ "$type" = "agents" ]; then
             local agent_file="$AGENT_BASE/$tech/agents/$name.json"
             if [ -f "$agent_file" ]; then
+                if ! command -v jq &> /dev/null; then warn "jq not found. Dependency-based sync skipped."; return 0; fi
+                
                 # Sync Instructions
                 local inst_list=$(jq -r '.instructions[]?' "$agent_file" 2>/dev/null)
                 for inst in ${(f)inst_list}; do
@@ -154,7 +164,6 @@ download_asset() {
         fi
         return 0
     else
-        if [ "$type" != "agents" ]; then rm -rf "$target_path"; fi
         return 1
     fi
 }
@@ -164,6 +173,13 @@ find_and_download_asset() {
     local name=$2
     local source_dir=$3
     
+    # Check if already downloaded in any tech to avoid duplicates
+    if [ -d "$AGENT_BASE" ]; then
+        if find "$AGENT_BASE" -type d -name "$name" | grep -q "/$type/$name$"; then
+            return 0
+        fi
+    fi
+
     for tech in "${TECHS[@]}"; do
         if download_asset "$tech" "$type" "$name" "$source_dir"; then
             return 0
@@ -178,29 +194,40 @@ sync_tech() {
     
     header "Syncing Technology: $tech"
     
-    local types=("agents" "instructions" "skills")
-    for type in "${types[@]}"; do
-        local folders=()
-        if [ -n "$LOCAL_PATH" ]; then
-            if [ "$type" = "agents" ]; then
-                folders=$(ls "$source_dir/$tech/agents"/*.json 2>/dev/null | xargs -n 1 basename -s .json)
-            else
-                folders=$(ls -d "$source_dir/$tech/$type"/*/ 2>/dev/null | xargs -n 1 basename)
-            fi
-        else
-            if [ "$type" = "agents" ]; then
-                folders=$(curl -s -f "$GITHUB_API/contents/.agents/$tech/agents?ref=$BRANCH" | jq -r '.[] | select(.type == "file" and (.name | endswith(".json"))) | .name' | sed 's/\.json$//' 2>/dev/null)
-            else
-                folders=$(curl -s -f "$GITHUB_API/contents/.agents/$tech/$type?ref=$BRANCH" | jq -r '.[] | select(.type == "dir") | .name' 2>/dev/null)
-            fi
-        fi
-        
+    # 1. Discover Agents in this tech folder
+    local folders=()
+    if [ -n "$LOCAL_PATH" ]; then
+        folders=$(ls "$source_dir/$tech/agents"/*.json 2>/dev/null | xargs -n 1 basename -s .json)
+    else
+        if ! command -v jq &> /dev/null; then error "Discovery requires 'jq'."; fi
+        folders=$(curl -s -f "$GITHUB_API/contents/.agents/$tech/agents?ref=$BRANCH" | jq -r '.[] | select(.type == "file" and (.name | endswith(".json"))) | .name' | sed 's/\.json$//' 2>/dev/null)
+    fi
+    
+    if [ -n "$folders" ]; then
+        # Agent-Centric Sync: The agent will pull its own dependencies
         for folder in ${(f)folders}; do
             if [ -n "$folder" ]; then
-                download_asset "$tech" "$type" "$folder" "$source_dir"
+                download_asset "$tech" "agents" "$folder" "$source_dir"
             fi
         done
-    done
+    else
+        # Fallback: Sync everything if no agents found (useful for 'shared' folder)
+        local types=("instructions" "skills")
+        for type in "${types[@]}"; do
+            local subfolders=()
+            if [ -n "$LOCAL_PATH" ]; then
+                subfolders=$(ls -d "$source_dir/$tech/$type"/*/ 2>/dev/null | xargs -n 1 basename)
+            else
+                subfolders=$(curl -s -f "$GITHUB_API/contents/.agents/$tech/$type?ref=$BRANCH" | jq -r '.[] | select(.type == "dir") | .name' 2>/dev/null)
+            fi
+            
+            for sub in ${(f)subfolders}; do
+                if [ -n "$sub" ]; then
+                    download_asset "$tech" "$type" "$sub" "$source_dir"
+                fi
+            done
+        done
+    fi
 }
 
 # --- Main Execution ---
