@@ -144,6 +144,15 @@ State-of-the-art patterns for the React universe.
 | `react-core` | [SKILL.md](./react/skills/react-core/SKILL.md) | React 19, Compiler optimization, and Server Components. |
 | `next-core` | [SKILL.md](./nextjs/skills/next-core/SKILL.md) | Next.js 15 App Router, Actions, and Streaming. |
 | `next-routes` | [SKILL.md](./nextjs/skills/next-routes/SKILL.md) | Advanced App Router patterns: Parallel & Intercepting routes. |
+| `nextjs-server-actions` | [SKILL.md](./nextjs/skills/nextjs-server-actions/SKILL.md) | RPC-like mutations and on-demand revalidation. |
+| `nextjs-safe-action` | [SKILL.md](./nextjs/skills/nextjs-safe-action/SKILL.md) | Typed and secure actions with middleware. |
+| `nextjs-auth-js` | [SKILL.md](./nextjs/skills/nextjs-auth-js/SKILL.md) | OAuth, JWT sessions, and route protection. |
+| `nextjs-orm-prisma` | [SKILL.md](./nextjs/skills/nextjs-orm-prisma/SKILL.md) | Type-safe DB access and singleton clients. |
+| `nextjs-seo-metadata` | [SKILL.md](./nextjs/skills/nextjs-seo-metadata/SKILL.md) | Metadata API, Dynamic OG, and Sitemap gen. |
+| `nextjs-i18n-intl` | [SKILL.md](./nextjs/skills/nextjs-i18n-intl/SKILL.md) | next-intl, localized routing, and RTL support. |
+| `nextjs-caching-isr` | [SKILL.md](./nextjs/skills/nextjs-caching-isr/SKILL.md) | Data cache, ISR, and tagging strategies. |
+| `nextjs-middleware` | [SKILL.md](./nextjs/skills/nextjs-middleware/SKILL.md) | Edge Runtime logic, Geo, and global redirects. |
+| `nextjs-shadcn-ui` | [SKILL.md](./nextjs/skills/nextjs-shadcn-ui/SKILL.md) | Accessible UI components with Radix & Tailwind. |
 | `framer-motion` | [SKILL.md](./react/skills/framer-motion/SKILL.md) | High-end animations and complex gesture handling. |
 | `react-hook-form` | [SKILL.md](./react/skills/react-hook-form/SKILL.md) | Performant and flexible form management. |
 | `react-hook-form-zod` | [SKILL.md](./react/skills/react-hook-form-zod/SKILL.md) | Schema-based validation for React Hook Form. |

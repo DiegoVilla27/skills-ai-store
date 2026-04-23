@@ -32,6 +32,8 @@
     "web-advanced-ui-ux",
     "web-performance",
     "web-tailwind",
+    "web-micro-frontends",
+    "web-modern-testing",
     "conventional-commits"
   ]
 }
