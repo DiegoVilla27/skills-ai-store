@@ -3,10 +3,10 @@
 > **"A meticulously curated vault of expert-level AI instructions and engineering patterns designed for the professional modern developer."**
 
 [![Author: Diego Villanueva](https://img.shields.io/badge/Author-Diego%20Villanueva-blue.svg)](https://github.com/DiegoVilla27)
-[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/DiegoVilla27/skills-ai-store)
+[![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/DiegoVilla27/agents-ai-store)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Welcome to the **Skills AI Store**. This repository is a premium ecosystem of specialized AI capabilities designed to transform large language models (LLMs) into world-class software engineers across multiple domains.
+Welcome to the **Agents AI Store**. This repository is a premium ecosystem of specialized AI capabilities designed to transform large language models (LLMs) into world-class software engineers across multiple domains.
 
 ---
 
@@ -27,7 +27,7 @@ Integrate these expert-level engineering standards into any project in seconds.
 ### 1. Download the Synchronizer
 Run this command in the root of your project:
 ```bash
-curl -O https://raw.githubusercontent.com/DiegoVilla27/skills-ai-store/main/async_agents.sh && chmod +x async_agents.sh
+curl -O https://raw.githubusercontent.com/DiegoVilla27/agents-ai-store/main/async_agents.sh && chmod +x async_agents.sh
 ```
 
 ### 2. Synchronize Assets

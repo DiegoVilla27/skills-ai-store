@@ -11,7 +11,7 @@
 # ==============================================================================
 
 # --- Configuration ---
-REPO="DiegoVilla27/skills-ai-store"
+REPO="DiegoVilla27/agents-ai-store"
 DEFAULT_BRANCH="main"
 AGENT_BASE=".agents"
 GITHUB_RAW="https://raw.githubusercontent.com/$REPO"
