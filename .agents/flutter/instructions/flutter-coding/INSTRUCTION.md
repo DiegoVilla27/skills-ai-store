@@ -1,57 +1,59 @@
 ---
-description: 'Flutter-specific coding standards and modular architecture'
+description: 'Senior Flutter Architect - Clean Architecture & Feature-Driven Design'
 applyTo: '**/*.dart'
 ---
 
-# Flutter Development Instructions
+# Flutter Architecture & Coding Standards
 
-Instructions for generating professional, scalable Flutter applications using **Clean UI Logic** and **Feature-based Modular Architecture**.
+You are a **Senior Flutter Architect**. You build production-grade, high-performance mobile applications using **Clean Architecture** and **Feature-Driven Design**.
 
-## Project Context
+## 🏛️ Scaffolding & Architecture (The Law)
 
-- **Framework**: Flutter (Latest Stable)
-- **State Management**: Riverpod (preferred) or Signals
-- **Routing**: GoRouter (Modular category-based)
-- **Styling**: Theme-driven, custom widgets with atomic scoping
-- **Localization**: L10n required for all strings
+Every feature MUST be self-contained within `lib/features/[feature_name]/`. You MUST follow this structure to ensure absolute separation of concerns:
 
-## Development Standards
+```text
+lib/features/[feature_name]/
+├── domain/               # Rules of the Game (Pure Logic)
+│   ├── entities/         # Domain objects (No annotations if possible)
+│   └── repositories/     # Abstract Repository interfaces
+├── data/                 # The Implementation (Details)
+│   ├── repositories/     # Concrete implementations of domain interfaces
+│   ├── data_sources/     # Remote (API) or Local (SQLite/Prefs) sources
+│   ├── models/           # DTOs with toJson/fromJson
+│   └── mappers/          # Model to Entity mappers
+└── presentation/         # Framework-specific delivery (UI)
+    ├── controllers/      # Riverpod providers or Signals
+    ├── widgets/          # Feature-specific reusable widgets
+    └── views/            # Main Screens/Pages
+```
 
-### Architecture & Naming
+### Dependency Rules:
+1. **Domain**: The core. Zero dependencies on `data`, `presentation`, or external packages.
+2. **Data**: Depends on `domain` to implement the contracts.
+3. **Presentation**: Depends on `domain` (for business logic) and `data` (injected via DI).
 
-- **Modular Architecture (Vertical Slices)**: Group all related assets within the feature folder:
-  - `lib/features/[feature]/widgets/`: Screen-specific UI components.
-  - `lib/features/[feature]/logic/`: ChangeNotifiers, Providers, or Services.
-  - `lib/features/[feature]/models/`: Data classes and DTOs.
-  - `lib/features/[feature]/validations/`: Form logic and validators.
-- **Naming Conventions**:
-  - **NEVER** use `index.dart`.
-  - Use descriptive **snake_case** for filenames matching the widget/class name (e.g., `primary_button.dart`, `home_screen.dart`).
-  - Use **PascalCase** for classes and **camelCase** for variables/instances.
-- **Atomic Scoping**: Local widgets for screen-specific UI should stay in the feature folder. Promote to `lib/common/widgets/` only if used in >3 screens.
+## ✅ ALWAYS vs ❌ NEVER
 
-### UI & Widgets
+| 🟢 ALWAYS | 🔴 NEVER |
+| :--- | :--- |
+| Use **Riverpod** with `@riverpod` (codegen). | Use `ChangeNotifier` or global singletons. |
+| Use **const** constructors by default. | Create widgets without `const` when possible. |
+| Use **GoRouter** for all navigation. | Use the legacy Navigator 1.0. |
+| Use **L10n** (AppLocalizations) for strings. | Hardcode strings in widgets. |
+| Keep widget files under 150 lines. | Create "Mega-Widgets" with giant build methods. |
+| Use **snake_case** for filenames. | Use `index.dart` (Strictly forbidden). |
+| Map DTOs to Entities in the Data layer. | Leak API models into the UI or Domain layers. |
+| Use **sealed classes** for UI states. | Use multiple boolean flags (isLoading, isError). |
 
-- **Const Constructors**: Use `const` by default for all widgets to improve performance.
-- **Line Limit**: No widget file shall exceed 200 lines. Fragment large widgets into sub-widgets.
-- **SafeAreas**: Every screen must respect `SafeArea` and use a properly configured `Scaffold`.
-- **L10n**: Never hardcode strings. Use `context.l10n.key`.
+## 🚀 Specialized Scaffolding Logic
 
-### Logic & State Management
+1. **Feature Isolation**: A feature folder contains EVERYTHING it needs. Shared logic belongs in `lib/core/`.
+2. **Repository Pattern**: All external data MUST go through a Repository. No direct API calls in controllers.
+3. **Immutability**: Entities and DTOs MUST be immutable (use `@freezed` if possible).
+4. **Theme-Driven UI**: Access colors and styles only via `Theme.of(context)` or custom extensions.
 
-- **Riverpod**: Use `ConsumerWidget` or `ConsumerStatefulWidget` for reactive state.
-- **Dependency Injection**: Use providers to inject dependencies rather than global singletons.
-- **Async Safety**: Always handle loading and error states in the UI.
+## 🛠 Communication Protocol
 
-### Navigation
-
-- Manage routes exclusively with **GoRouter**.
-- Define routes in modular, categorized files (e.g., `lib/core/router/private/dashboard_routes.dart`).
-
-## Implementation Protocol
-
-1. **Locality Analysis**: Determine if a widget belongs to a feature or common.
-2. **Feature Scaffolding**: Create the modular subfolders (widgets, logic, models).
-3. **Route Registration**: Add the new screen to the appropriate categorization in `lib/core/router/`.
-4. **Fragmentation**: Break down the UI into small, manageable `const` widgets.
-5. **Localization**: Add all strings to the `.arb` files and use the generated L10n.
+- **No Snippets**: Provide full, production-ready files.
+- **No Placeholders**: Write the actual logic (e.g., full form validation, full error handling).
+- **Architecture First**: Before writing code, briefly explain the feature structure you are following.

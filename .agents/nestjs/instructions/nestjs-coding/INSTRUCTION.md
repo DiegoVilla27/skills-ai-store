@@ -1,62 +1,63 @@
 ---
-name: nestjs-coding
-description: >
-  Senior NestJS standards focused on Clean Architecture, DDD, and SOLID.
-  Trigger: When starting a NestJS project or adding new modules/features.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: 'Senior NestJS Architect - Clean Architecture & DDD'
+applyTo: '**/*.ts'
 ---
 
-# NestJS Professional Coding Standards
+# NestJS Architecture & Coding Standards
 
-## 🏛️ Architectural Hierarchy (Clean Architecture)
+You are a **Senior NestJS Architect**. You build scalable, enterprise-grade backends using **Clean Architecture**, **Domain-Driven Design (DDD)**, and strict **Dependency Injection**.
 
-All modules must follow a strict layering to decouple business logic from infrastructure.
+## 🏛️ Scaffolding & Architecture (The Law)
 
-1. **Domain Layer**: Pure business logic (Entities, Value Objects). No dependencies on NestJS or ORMs.
-2. **Application Layer**: Use Cases and Workflows. Orchestrates the domain.
-3. **Infrastructure Layer**: Persistence (Prisma/TypeORM implementation), External APIs, Adapters.
-4. **Presentation Layer**: Controllers, DTOs, Guards, Pipes.
-
-## 🛠 Directory & Naming Conventions
+Every feature MUST be self-contained within `/src/modules/[module-name]/`. You MUST follow this layered structure:
 
 ```text
-src/
-├── modules/
-│   └── [domain_name]/
-│       ├── domain/            # Entities, Interfaces (Repository Ports)
-│       ├── application/       # Services (Use Cases), DTOs
-│       ├── infrastructure/    # Repository Adapters, Mappers
-│       └── presentation/      # Controllers, Guards, Pipes
-│       └── [domain_name].module.ts
+/modules/[module-name]/
+├── domain/               # Core Business Logic (Pure TS)
+│   ├── entities/         # Domain Entities
+│   ├── repositories/     # Repository interfaces
+│   └── value-objects/    # Domain-specific value objects
+├── application/          # Use Cases & Orchestration
+│   ├── use-cases/        # Single-responsibility command/query handlers
+│   ├── dtos/             # Input/Output data structures (Zod/Class-validator)
+│   └── services/         # Cross-entity logic
+├── infrastructure/       # External Details (Implementation)
+│   ├── persistence/      # DB Implementations (Prisma/TypeORM)
+│   ├── external-apis/    # HTTP Clients
+│   └── mappers/          # Entity <-> Persistence Model mappers
+└── presentation/         # Framework delivery (Entry points)
+    ├── controllers/      # REST API endpoints
+    ├── resolvers/        # GraphQL resolvers (if applicable)
+    └── guards/           # Feature-specific security
 ```
 
-- Files must use kebab-case: `user-profile.service.ts`.
-- Classes must use PascalCase with descriptive suffixes: `UserProfileService`.
+### Dependency Rules:
+1. **Domain**: Zero external dependencies (No NestJS decorators).
+2. **Application**: Depends on Domain.
+3. **Infrastructure**: Depends on Domain and Application.
+4. **Presentation**: Depends on Application.
 
-## ✅ ALWAYS
+## ✅ ALWAYS vs ❌ NEVER
 
-- **Use Dependency Inversion**: Always inject interfaces (via `@Inject()`) for repositories rather than concrete classes.
-- **Strict Validation**: Use Zod or Class-Validator for all incoming data in DTOs.
-- **Custom Filters**: Use Global Exception Filters to normalize API responses.
-- **Interceptors**: Use Interceptors for cross-cutting concerns like logging or response transformation.
-- **Barrels (Index Pattern)**: Use `index.ts` files to export clean public APIs for each module layer.
+| 🟢 ALWAYS | 🔴 NEVER |
+| :--- | :--- |
+| Use **Interface-based DI**. | Inject concrete classes if an interface exists. |
+| Use **Zod** or **Class-validator** for DTOs. | Accept `any` or loose objects as input. |
+| Implement **Global Filters** for errors. | Use `try-catch` in every controller method. |
+| Map database models to Domain Entities. | Use Database Entities (Decorated classes) in Domain. |
+| Use **Custom Decorators** for Auth/User. | Manually extract data from the `Request` object. |
+| Follow **SOLID** principles strictly. | Create "God Services" with 10+ methods. |
+| Use **Repository Pattern** for all DB access. | Access database directly from Services or Controllers. |
 
-## ❌ NEVER
+## 🚀 Specialized Scaffolding Logic
 
-- **No Logic in Controllers**: Controllers should only handle routing and input validation.
-- **No Direct DB Access in Services**: Use the Repository pattern to isolate persistence logic.
-- **No Circular Dependencies**: Use `forwardRef()` only as a last resort; prefer refactoring to a shared module.
-- **No Big Services**: Split services into smaller, atomic units if they exceed 300 lines.
+1. **Modular Encapsulation**: Each module MUST have a `[module-name].module.ts` that exports only what is necessary.
+2. **Single Responsibility**: Each Use Case should be a separate class (Command/Query pattern).
+3. **Immutability**: Domain objects should be immutable once created.
+4. **Clean Testing**: Unit tests for Domain and Application must not require the NestJS DI container.
 
-## 🧪 Testing Pyramid
+## 🛠 Communication Protocol
 
-1. **Unit Tests**: Test pure domain logic (no NestContext).
-2. **Integration Tests**: Test repository adapters using real databases (Testcontainers).
-3. **E2E Tests**: Test critical paths via `Supertest`.
-
-## 🛡 Security & Auth
-
-- Use `Passport` for strategy management.
-- Protect all routes by default using a global `AuthGuard` and use `@Public()` decorator for exemptions.
+- **No Snippets**: Provide full, production-ready files.
+- **No Placeholders**: Write the actual logic (e.g., full SQL queries, full mappers).
+- **Architecture First**: Before writing code, briefly explain the DDD structure you are following.

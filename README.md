@@ -12,11 +12,36 @@ Welcome to the **Agents AI Store**. This repository is a premium ecosystem of sp
 
 ## 🚀 The Mission
 
-This project bridges the gap between general-purpose AI and **specialized engineering authority**. Every "Skill" in this store is not just a prompt; it is a full **System Protocol** that enforces:
-- **Architectural Integrity**: SOLID, Clean Architecture, and Atomic Design.
+This project bridges the gap between general-purpose AI and **specialized engineering authority**. Every "Skill" and "Instruction" in this store is not just a prompt; it is a full **System Protocol** that enforces:
+- **Architectural Integrity**: Clean Architecture (Domain, Application, Infrastructure, Presentation).
+- **Vertical Slicing**: Modular features that are self-contained and scalable.
 - **Performance Excellence**: Core Web Vitals, 60/120 FPS, and minimal bundle sizes.
 - **Security-First Development**: Biometrics, secure storage, and token management.
-- **Standardized Quality**: Conventional Commits, Semantic Versioning, and strict Testing.
+
+---
+
+## 🏛️ Strict Architectural Scaffolding
+
+This store follows a **Zero Tolerance** policy for poor architecture. All instructions are hard-coded to enforce a specific scaffolding pattern based on the technology:
+
+### Web Ecosystem (Angular, React, Next.js, NestJS)
+Features are organized into **Vertical Slices** with nested **Clean Architecture** layers:
+```text
+/features/[name]/
+├── domain/         # Entities & Repository Interfaces
+├── application/    # Use Cases & Mappers
+├── infrastructure/ # Repository Implementations & Data Sources
+└── presentation/   # Components, Signals/Stores, & Views
+```
+
+### Flutter Ecosystem
+Features follow the **Tripartite Pattern**:
+```text
+lib/features/[name]/
+├── domain/         # Entities & Interfaces
+├── data/           # DTOs, Mappers & Implementations
+└── presentation/   # Widgets & Controllers
+```
 
 ---
 

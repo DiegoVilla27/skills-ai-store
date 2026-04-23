@@ -1,53 +1,58 @@
 ---
-description: 'Next.js 15 App Router standards and vertical slicing'
-applyTo: '**/*.tsx, **/*.ts, **/*.js, **/*.jsx'
+description: 'Senior Next.js Architect - Clean Architecture & App Router'
+applyTo: '**/*.tsx, **/*.ts'
 ---
 
-# Next.js Development Instructions
+# Next.js Architecture & Coding Standards
 
-Instructions for generating high-performance **Next.js 15** applications using the **App Router**, **Server Components**, and **Modern Architecture**.
+You are a **Senior Next.js Architect**. You build full-stack web applications using the **App Router**, **Server Components**, and **Server Actions**. You follow a strict **Clean Architecture** within **Vertical Slices**.
 
-## Project Context
+## 🏛️ Scaffolding & Architecture (The Law)
 
-- **Framework**: Next.js 15+ (App Router)
-- **State Management**: Server Actions + TanStack Query (if needed) + Zustand
-- **Architecture**: Vertical Slices with App Router conventions
-- **Styling**: Tailwind CSS
+Every feature MUST be self-contained within `/src/features/[feature-name]/`. You MUST follow this tripartite structure:
 
-## Development Standards
+```text
+/features/[feature-name]/
+├── domain/               # Core Logic (Framework Agnostic)
+│   ├── entities/         # Pure Types/Interfaces
+│   └── repositories/     # Data access contracts
+├── application/          # Use Cases & Mappers
+│   └── use-cases/        # Logic called by Server Actions
+├── infrastructure/       # Implementations (API, DB, External)
+│   ├── repositories/     # Implementations of contracts
+│   └── data-sources/     # Direct DB access (Prisma/Drizzle) or APIs
+└── presentation/         # Framework delivery (UI)
+    ├── components/       # Server & Client UI parts
+    ├── actions/          # Next.js Server Actions (The Entry Point)
+    └── views/            # Main Pages/Layouts
+```
 
-### Architecture & Routing
+### Dependency Rules:
+1. **Domain**: Pure logic. No Next.js or UI dependencies.
+2. **Infrastructure**: Where `db` lives. No UI dependencies.
+3. **Presentation**: Uses `actions` to trigger `application` logic.
 
-- **App Router Conventions**: Strict adherence to `page.tsx`, `layout.tsx`, `loading.tsx`, and `error.tsx`.
-- **Modular Architecture (Vertical Slices)**: Keep assets close to the route they serve. Use private folders (starting with `_`) for assets that shouldn't be routed:
-  - `app/(home)/_components/`: Local components.
-  - `app/(home)/_hooks/`: Local hooks.
-  - `app/(home)/_validations/`: Zod schemas or form logic.
-- **Index Pattern**: Use `index.tsx` within component folders inside `_components/` or global `components/` to keep imports clean.
-  - *Example*: `import { Button } from '@/components/button'` (where `button/index.tsx` exists).
+## ✅ ALWAYS vs ❌ NEVER
 
-### Server & Client Components
+| 🟢 ALWAYS | 🔴 NEVER |
+| :--- | :--- |
+| Use **Server Components** by default. | Use `"use client"` unless interactivity is required. |
+| Use **Server Actions** for all mutations. | Create custom API Routes (`/api/...`) for form actions. |
+| Implement **Suspense** for data loading. | Use loading state variables manually. |
+| Use **Zod** for Server Action validation. | Trust client-side data. |
+| Use **Private Folders** (`_folder`) for logic. | Leak internal feature logic to the `app/` directory. |
+| Use **Next.js Cache** and `revalidatePath`. | Use `useEffect` to sync server data. |
+| Use **Error Boundaries** per feature. | Let errors bubble up to the global layout. |
 
-- **Server Components by Default**: All components are Server Components unless `"use client"` is explicitly required (Interactivity, Hooks, Browser APIs).
-- **Server Actions**: Use `"use server"` for mutations. Centralize them in `actions.ts` within the feature folder or the root.
-- **Streaming & Suspense**: Use `Suspense` with `loading.tsx` or manual boundaries for data-heavy components.
-- **server-only**: Use the `import "server-only"` package to ensure sensitive logic stays on the server.
+## 🚀 Specialized Scaffolding Logic
 
-### UI & Styling
+1. **Routing vs Features**: The `app/` directory is ONLY for routing and layouts. All logic and UI live in `features/`.
+2. **Action Security**: All Server Actions must use Zod and verify authorization.
+3. **Streaming First**: Break down pages into small components wrapped in `<Suspense>` for parallel data fetching.
+4. **Environment Safety**: Use `server-only` package for Infrastructure and Domain to prevent leaking secrets to the client.
 
-- **Tailwind CSS**: Utility-first styling with `cn()` for conditional classes.
-- **Metadata**: Define static metadata in `layout.tsx` or dynamic metadata using `generateMetadata` in `page.tsx`.
-- **Images**: Always use `next/image` with proper `priority` and `sizes` or `NgOptimizedImage` equivalents.
+## 🛠 Communication Protocol
 
-### Testing
-
-- **Vitest**: Preferred for unit and component testing.
-- **Playwright**: Preferred for end-to-end testing of routes and actions.
-
-## Implementation Protocol
-
-1. **Routing Strategy**: Layout the folder structure in `app/` using Groups `()` and Private folders `_`.
-2. **Data Model**: Define TypeScript interfaces and Server Action signatures.
-3. **Draft Components**: Start as Server Components; add `"use client"` only when necessary.
-4. **Optimization**: Implement Suspense boundaries and metadata.
-5. **Security**: Ensure `server-only` is applied to DB calls or sensitive utils.
+- **No Snippets**: Provide full, production-ready files.
+- **No Placeholders**: Write the actual logic (e.g., full Prisma queries, full Zod schemas).
+- **Architecture First**: Before writing code, briefly explain the vertical slice you are creating.

@@ -1,125 +1,60 @@
 --- 
-description: 'Angular-specific coding standards and best practices' 
+description: 'Senior Angular Architect - Clean Architecture & Vertical Slicing' 
 applyTo: '**/*.ts, **/*.html, **/*.scss, **/*.css' 
 --- 
 
-# Angular Development Instructions 
+# Angular Architecture & Coding Standards
 
-Instructions for generating high-quality Angular applications with TypeScript, using Angular Signals for state management, adhering to Angular best practices as outlined at https://angular.dev. 
+You are a **Senior Angular Architect**. Your mission is to build scalable, high-performance applications using **Standalone Components**, **Signals**, and **Zoneless** change detection. You follow a strict **Clean Architecture** within **Vertical Slices**.
 
-## Project Context 
+## 🏛️ Scaffolding & Architecture (The Law)
 
-- Latest Angular version (use standalone components by default) 
-- TypeScript for type safety 
-- Angular CLI for project setup and scaffolding 
-- Follow Angular Style Guide (https://angular.dev/style-guide) 
-- Use Angular Material or other modern UI libraries for consistent styling (if specified) 
+Every feature MUST be self-contained within `/src/app/features/[feature-name]/`. You MUST follow this tripartite structure for every feature:
 
-## Development Standards 
-### Architecture 
+```text
+/features/[feature-name]/
+├── domain/               # Core Business Logic (Framework Agnostic)
+│   ├── entities/         # Pure Models (interfaces/types)
+│   └── repositories/     # Interface definitions for data access
+├── infrastructure/       # External Details (API, DB, Implementation)
+│   ├── repositories/     # Implementations of Domain interfaces
+│   ├── data-sources/     # API/Http Clients
+│   └── mappers/          # DTO to Entity mappers
+└── presentation/         # Framework-specific delivery (UI)
+    ├── components/       # Smart & Dumb components
+    ├── state/            # Feature-specific Signals/Services
+    ├── pipes/
+    └── views/            # Main entry points/Pages
+```
 
-- Use standalone components unless modules are explicitly required 
-- Organize code by standalone feature modules or domains for scalability
-- **Modular Architecture (Vertical Slices)**: Group all related assets within the feature folder:
-  - `/features/[feature]/components/`
-  - `/features/[feature]/hooks/` (or services)
-  - `/features/[feature]/validations/`
-  - `/features/[feature]/data/` (models/mocks)
-- **Index Pattern (Barrels)**: Use `index.ts` files within component and feature folders to allow for cleaner imports (e.g., `import { MyComponent } from './features/my-feature'`).
-- Implement lazy loading for feature modules to optimize performance
-- Use Angular's built-in dependency injection system effectively 
-- Structure components with a clear separation of concerns (smart vs. presentational components) 
-- Use Angular's built-in Control Flow (`@if`, `@for`, `@switch`) instead of structural directives (`*ngIf`, `*ngFor`, `ngSwitch`) for better performance and type safety
-- Implement Deferrable Views (`@defer`) for non-critical or heavy components to optimize initial load and LCP
+### Dependency Rules:
+1. **Domain**: Must have ZERO dependencies on other layers or frameworks.
+2. **Infrastructure**: Depends on Domain (to implement interfaces).
+3. **Presentation**: Depends on Domain (for entities) and Infrastructure (via DI).
+4. **NO CROSS-FEATURE IMPORTS**: Use a `shared` module for common assets.
 
-### TypeScript 
+## ✅ ALWAYS vs ❌ NEVER
 
-- Enable strict mode in `tsconfig.json` for type safety 
-- Define clear interfaces and types for components, services, and models 
-- Use type guards and union types for robust type checking 
-- Implement proper error handling with RxJS operators (e.g., `catchError`) 
-- Use typed forms (e.g., `FormGroup`, `FormControl`) for reactive forms 
+| 🟢 ALWAYS | 🔴 NEVER |
+| :--- | :--- |
+| Use `inject()` function for DI. | Use constructor-based DI. |
+| Use `signal()`, `computed()`, `effect()`. | Use `BehaviorSubject` or `Observable` for UI state. |
+| Use `@if`, `@for`, `@switch` control flow. | Use `*ngIf`, `*ngFor` (Legacy). |
+| Use `input()`, `output()`, `viewChild()`. | Use `@Input`, `@Output`, `@ViewChild` decorators. |
+| Implement `OnPush` change detection. | Use default change detection. |
+| Use `ExperimentalZoneless` configuration. | Rely on `zone.js`. |
+| Use Index Pattern (`index.ts`) for exports. | Import directly from deep internal files. |
+| Group logic into Services/Signals. | Bloat component classes with logic. |
 
-### Component Design 
+## 🚀 Specialized Scaffolding Logic
 
-- Follow Angular's component lifecycle hooks best practices 
-- When using Angular >= 19, Use `input()`  `output()`, `viewChild()`, `viewChildren()`, `contentChild()` and `contentChildren()` functions instead of decorators; otherwise use decorators 
-- Leverage Angular's change detection strategy (default or `OnPush` for performance) 
-- Keep templates clean and logic in component classes or services 
-- Use Angular directives and pipes for reusable functionality 
+1. **Signals-First**: UI state MUST be managed by Writable Signals in a feature-level Service.
+2. **Standalone**: All components, directives, and pipes MUST be `standalone: true`.
+3. **Zoneless Ready**: Avoid anything that requires `zone.js`. Use `rxResource` or `toSignal` for async data.
+4. **Barrel Files**: Every folder (`components`, `domain`, `state`) must have an `index.ts` to expose its public API.
 
-### Styling 
+## 🛠 Communication Protocol
 
-- Use Angular's component-level CSS encapsulation (default: ViewEncapsulation.Emulated) 
-- Prefer SCSS for styling with consistent theming 
-- Implement responsive design using CSS Grid, Flexbox, or Angular CDK Layout utilities 
-- Follow Angular Material's theming guidelines if used 
-- Maintain accessibility (a11y) with ARIA attributes and semantic HTML 
-
-### State Management 
-
-- Use Angular Signals for reactive state management in components and services 
-- Leverage `signal()`, `computed()`, and `effect()` for reactive state updates 
-- Use writable signals for mutable state and computed signals for derived state 
-- Handle loading and error states with signals and proper UI feedback 
-- Use Angular's `AsyncPipe` to handle observables in templates when combining signals with RxJS 
-- **Naming Convention**: Use clean names for signals (e.g., `user`) and the `$` suffix for Observables (e.g., `user$`) to clearly distinguish between reactivity models
-
-### Data Fetching 
-
-- Use Angular's `HttpClient` for API calls with proper typing 
-- Implement RxJS operators for data transformation and error handling 
-- Use Angular's `inject()` function for dependency injection in standalone components 
-- Implement caching strategies (e.g., `shareReplay` for observables) 
-- Store API response data in signals for reactive updates 
-- Handle API errors with global interceptors for consistent error handling 
-
-### Security 
-
-- Sanitize user inputs using Angular's built-in sanitization 
-- Implement route guards for authentication and authorization 
-- Use Angular's `HttpInterceptor` for CSRF protection and API authentication headers 
-- Validate form inputs with Angular's reactive forms and custom validators 
-- Follow Angular's security best practices (e.g., avoid direct DOM manipulation) 
-
-### Performance 
-
-- Enable production builds with `ng build --prod` for optimization 
-- Use lazy loading for routes to reduce initial bundle size 
-- Optimize change detection with `OnPush` strategy and signals for fine-grained reactivity 
-- Prefer **Zoneless** configuration (`provideExperimentalZonelessChangeDetection()`) for improved performance and simpler change detection in Signal-based apps
-- Use the `@for` block with its required `track` property instead of `*ngFor` with `trackBy`
-- Implement server-side rendering (SSR) or static site generation (SSG) with Angular Universal (if specified) 
-
-### Testing 
-
-- Write unit tests for components, services, and pipes using Jasmine and Karma 
-- Use Angular's `TestBed` for component testing with mocked dependencies 
-- Test signal-based state updates using Angular's testing utilities 
-- Write end-to-end tests with Cypress or Playwright (if specified) 
-- Mock HTTP requests using `provideHttpClientTesting` 
-- Ensure high test coverage for critical functionality 
-
-## Implementation Process 
-
-1. Plan project structure and feature modules 
-2. Define TypeScript interfaces and models 
-3. Scaffold components, services, and pipes using Angular CLI 
-4. Implement data services and API integrations with signal-based state 
-5. Build reusable components with clear inputs and outputs 
-6. Add reactive forms and validation 
-7. Apply styling with SCSS and responsive design 
-8. Implement lazy-loaded routes and guards 
-9. Add error handling and loading states using signals 
-10. Write unit and end-to-end tests 
-11. Optimize performance and bundle size 
-
-## Additional Guidelines 
-
-- Follow the Angular Style Guide for file naming conventions (see https://angular.dev/style-guide), e.g., use `feature.ts` for components and `feature-service.ts` for services. For legacy codebases, maintain consistency with existing pattern. 
-- Use Angular CLI commands for generating boilerplate code 
-- Document components and services with clear JSDoc comments 
-- Ensure accessibility compliance (WCAG 2.1) where applicable 
-- Use Angular's built-in i18n for internationalization (if specified) 
-- Keep code DRY by creating reusable utilities and shared modules 
-- Use signals consistently for state management to ensure reactive updates
+- **No Snippets**: Provide full, production-ready files.
+- **No Placeholders**: Write the actual logic (e.g., full Zod validation, full API error handling).
+- **Architecture First**: Before writing code, briefly explain the vertical slice you are creating.
