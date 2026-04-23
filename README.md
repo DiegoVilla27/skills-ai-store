@@ -162,10 +162,17 @@ Production-grade backend patterns using NestJS 10+.
 Enterprise-grade patterns for modern Angular apps.
 | Skill Name | Documentation | Focus |
 |:---|:---|:---|
-| `angular-core` | [SKILL.md](./angular/skills/angular-core/SKILL.md) | Signals-first components and Zoneless architecture. |
-| `angular-architecture` | [SKILL.md](./angular/skills/angular-architecture/SKILL.md) | The "Scope Rule" and modular project structure. |
-| `angular-forms` | [SKILL.md](./angular/skills/angular-forms/SKILL.md) | Signal Forms vs Reactive Forms validation. |
-| `angular-performance` | [SKILL.md](./angular/skills/angular-performance/SKILL.md) | Defer, NgOptimizedImage, and SSR optimization. |
+| `angular-core` | [SKILL.md](./angular/skills/angular-core/SKILL.md) | Standalone components and modern Signal inputs. |
+| `angular-signals` | [SKILL.md](./angular/skills/angular-signals/SKILL.md) | Fine-grained reactivity, computed and effects. |
+| `angular-architecture` | [SKILL.md](./angular/skills/angular-architecture/SKILL.md) | Clean Architecture and Vertical Slicing. |
+| `angular-routing` | [SKILL.md](./angular/skills/angular-routing/SKILL.md) | Functional guards, lazy loading, and deep links. |
+| `angular-http` | [SKILL.md](./angular/skills/angular-http/SKILL.md) | Type-safe API communication and rxResource. |
+| `angular-di` | [SKILL.md](./angular/skills/angular-di/SKILL.md) | Mastery of inject() and modern DI patterns. |
+| `angular-forms` | [SKILL.md](./angular/skills/angular-forms/SKILL.md) | Reactive Forms and advanced validation. |
+| `angular-performance` | [SKILL.md](./angular/skills/angular-performance/SKILL.md) | Zoneless, @defer, and SSR optimizations. |
+| `angular-ssr-hydration` | [SKILL.md](./angular/skills/angular-ssr-hydration/SKILL.md) | Non-destructive hydration and TransferState. |
+| `angular-animations` | [SKILL.md](./angular/skills/angular-animations/SKILL.md) | DSL animations, coordinated triggers and staggering. |
+| `angular-i18n` | [SKILL.md](./angular/skills/angular-i18n/SKILL.md) | Internationalization and localized formatting. |
 
 ### 💙 Flutter Ecosystem
 Comprehensive suite for high-performance Cross-Platform apps.
