@@ -7,7 +7,7 @@
 # from the central repository and integrates them into any local project.
 #
 # Usage:
-#   ./async_agents.sh [asset_name1] [asset_name2] [--clean] [--branch name]
+#   ./async_agents.sh [tech|asset] [--clean] [--branch name]
 # ==============================================================================
 
 # --- Configuration ---
@@ -16,6 +16,8 @@ DEFAULT_BRANCH="main"
 AGENT_BASE=".agents"
 GITHUB_RAW="https://raw.githubusercontent.com/$REPO"
 GITHUB_API="https://api.github.com/repos/$REPO"
+
+TECHS=("angular" "react" "flutter" "nextjs" "nestjs" "react-native" "shared")
 
 # --- Colors ---
 GREEN='\033[0;32m'
@@ -38,31 +40,27 @@ error() { echo -e "${RED}❌ $1${NC}"; exit 1; }
 header() { echo -e "\n${PURPLE}=== $1 ===${NC}"; }
 
 usage() {
-    echo "Usage: $0 [assets...] [options]"
+    echo "Usage: $0 [techs|assets...] [options]"
+    echo ""
+    echo "Techs:"
+    echo "  ${TECHS[*]}"
     echo ""
     echo "Assets:"
-    echo "  The name(s) of the skill, instruction, or agent (persona) folders."
-    echo "  If omitted, all assets will be synced."
+    echo "  The name of a specific skill, instruction, or agent."
     echo ""
     echo "Options:"
     echo "  --clean         Deletes the .agents directory before downloading."
     echo "  --branch B      Specifies a different branch (default: main)."
     echo "  --local P       Specifies a local path to the store for development."
-    echo "  --skills        Only sync skills."
-    echo "  --instructions  Only sync instructions."
-    echo "  --agents        Only sync agent personas."
     echo "  --help          Shows this message."
     exit 0
 }
 
 # --- Initialization ---
-SELECTED_ASSETS=()
+SELECTED_ITEMS=()
 CLEAN_MODE=false
 BRANCH=$DEFAULT_BRANCH
 LOCAL_PATH=""
-SCAN_SKILLS=true
-SCAN_INSTRUCTIONS=true
-SCAN_AGENTS=true
 
 # --- Argument Parsing ---
 while [[ $# -gt 0 ]]; do
@@ -70,30 +68,28 @@ while [[ $# -gt 0 ]]; do
         --clean) CLEAN_MODE=true; shift ;;
         --branch) BRANCH="$2"; shift 2 ;;
         --local) LOCAL_PATH="$2"; shift 2 ;;
-        --skills) SCAN_INSTRUCTIONS=false; SCAN_AGENTS=false; shift ;;
-        --instructions) SCAN_SKILLS=false; SCAN_AGENTS=false; shift ;;
-        --agents) SCAN_SKILLS=false; SCAN_INSTRUCTIONS=false; shift ;;
         --help) usage ;;
         -*) warn "Unknown option: $1"; shift ;;
-        *) SELECTED_ASSETS+=("$1"); shift ;;
+        *) SELECTED_ITEMS+=("$1"); shift ;;
     esac
 done
 
 # --- Download Logic ---
 download_asset() {
-    local type=$1    # "skills", "instructions", or "agents"
-    local name=$2    # folder or file name
-    local source_dir=$3
+    local tech=$1
+    local type=$2    # "skills", "instructions", or "agents"
+    local name=$3    # folder or file name
+    local source_dir=$4
     local icon="🛠"
     
     if [ "$type" = "instructions" ]; then icon="📜"; fi
     if [ "$type" = "agents" ]; then icon="🤖"; fi
     
-    info "Processing $icon $name ($type)..."
+    info "Processing $icon $name ($tech/$type)..."
     
-    local target_path="$AGENT_BASE/$type/$name"
+    local target_path="$AGENT_BASE/$tech/$type/$name"
     if [ "$type" = "agents" ]; then
-        target_path="$AGENT_BASE/$type"
+        target_path="$AGENT_BASE/$tech/$type"
     fi
     mkdir -p "$target_path"
     
@@ -112,8 +108,8 @@ download_asset() {
         
         if [ -n "$LOCAL_PATH" ]; then
             # Local Mode
-            local src_file="$source_dir/$type/$name/$file"
-            if [ "$type" = "agents" ]; then src_file="$source_dir/$type/$file"; fi
+            local src_file="$source_dir/$tech/$type/$name/$file"
+            if [ "$type" = "agents" ]; then src_file="$source_dir/$tech/$type/$file"; fi
             
             if [ -f "$src_file" ]; then
                 cp "$src_file" "$target_file"
@@ -122,8 +118,8 @@ download_asset() {
             fi
         else
             # Remote Mode
-            local file_url="$GITHUB_RAW/$BRANCH/.agents/$type/$name/$file"
-            if [ "$type" = "agents" ]; then file_url="$GITHUB_RAW/$BRANCH/.agents/$type/$file"; fi
+            local file_url="$GITHUB_RAW/$BRANCH/.agents/$tech/$type/$name/$file"
+            if [ "$type" = "agents" ]; then file_url="$GITHUB_RAW/$BRANCH/.agents/$tech/$type/$file"; fi
             
             curl -s -f -L "$file_url" -o "$target_file"
             if [ $? -eq 0 ]; then
@@ -134,24 +130,24 @@ download_asset() {
     done
     
     if [ "$found" = true ]; then
+        if [ "$type" = "skills" ]; then ((SYNC_COUNT_SKILLS++)); elif [ "$type" = "instructions" ]; then ((SYNC_COUNT_INST++)); else ((SYNC_COUNT_AGENTS++)); fi
+        
         # Recursive sync for Agents
         if [ "$type" = "agents" ]; then
-            local agent_file="$AGENT_BASE/agents/$name.json"
+            local agent_file="$AGENT_BASE/$tech/agents/$name.json"
             if [ -f "$agent_file" ]; then
                 # Sync Instructions
                 local inst_list=$(jq -r '.instructions[]?' "$agent_file" 2>/dev/null)
                 for inst in ${(f)inst_list}; do
                     if [ -n "$inst" ]; then
-                        download_asset "instructions" "$inst" "$source_dir"
-                        ((SYNC_COUNT_INST++))
+                        find_and_download_asset "instructions" "$inst" "$source_dir"
                     fi
                 done
                 # Sync Skills
                 local skill_list=$(jq -r '.skills[]?' "$agent_file" 2>/dev/null)
                 for skill in ${(f)skill_list}; do
                     if [ -n "$skill" ]; then
-                        download_asset "skills" "$skill" "$source_dir"
-                        ((SYNC_COUNT_SKILLS++))
+                        find_and_download_asset "skills" "$skill" "$source_dir"
                     fi
                 done
             fi
@@ -163,13 +159,59 @@ download_asset() {
     fi
 }
 
+find_and_download_asset() {
+    local type=$1
+    local name=$2
+    local source_dir=$3
+    
+    for tech in "${TECHS[@]}"; do
+        if download_asset "$tech" "$type" "$name" "$source_dir"; then
+            return 0
+        fi
+    done
+    return 1
+}
+
+sync_tech() {
+    local tech=$1
+    local source_dir=$2
+    
+    header "Syncing Technology: $tech"
+    
+    local types=("agents" "instructions" "skills")
+    for type in "${types[@]}"; do
+        local folders=()
+        if [ -n "$LOCAL_PATH" ]; then
+            if [ "$type" = "agents" ]; then
+                folders=$(ls "$source_dir/$tech/agents"/*.json 2>/dev/null | xargs -n 1 basename -s .json)
+            else
+                folders=$(ls -d "$source_dir/$tech/$type"/*/ 2>/dev/null | xargs -n 1 basename)
+            fi
+        else
+            if [ "$type" = "agents" ]; then
+                folders=$(curl -s -f "$GITHUB_API/contents/.agents/$tech/agents?ref=$BRANCH" | jq -r '.[] | select(.type == "file" and (.name | endswith(".json"))) | .name' | sed 's/\.json$//' 2>/dev/null)
+            else
+                folders=$(curl -s -f "$GITHUB_API/contents/.agents/$tech/$type?ref=$BRANCH" | jq -r '.[] | select(.type == "dir") | .name' 2>/dev/null)
+            fi
+        fi
+        
+        for folder in ${(f)folders}; do
+            if [ -n "$folder" ]; then
+                download_asset "$tech" "$type" "$folder" "$source_dir"
+            fi
+        done
+    done
+}
+
 # --- Main Execution ---
 header "🌌 Async Agents Synchronizer"
 
 if [ -n "$LOCAL_PATH" ]; then
     info "LOCAL MODE: Source '$LOCAL_PATH'"
+    SRC_DIR="$LOCAL_PATH/.agents"
 else
     info "REMOTE MODE: Repository $REPO ($BRANCH)"
+    SRC_DIR=""
 fi
 
 if [ "$CLEAN_MODE" = true ]; then
@@ -177,63 +219,39 @@ if [ "$CLEAN_MODE" = true ]; then
     rm -rf "$AGENT_BASE"
 fi
 
-if [ ${#SELECTED_ASSETS[@]} -eq 0 ]; then
-    # Full Discovery Sync
-    for type in "agents" "instructions" "skills"; do
-        if [ "$type" = "skills" ] && [ "$SCAN_SKILLS" = false ]; then continue; fi
-        if [ "$type" = "instructions" ] && [ "$SCAN_INSTRUCTIONS" = false ]; then continue; fi
-        if [ "$type" = "agents" ] && [ "$SCAN_AGENTS" = false ]; then continue; fi
-        
-        header "Syncing $type"
-        
-        if [ -n "$LOCAL_PATH" ]; then
-            if [ "$type" = "agents" ]; then
-                folders=$(ls "$LOCAL_PATH/.agents/agents"/*.json 2>/dev/null | xargs -n 1 basename -s .json)
-            else
-                folders=$(ls -d "$LOCAL_PATH/.agents/$type"/*/ 2>/dev/null | xargs -n 1 basename)
-            fi
-        else
-            if ! command -v jq &> /dev/null; then error "Discovery requires 'jq'. Install it or specify names manually."; fi
-            if [ "$type" = "agents" ]; then
-                folders=$(curl -s -f "$GITHUB_API/contents/.agents/agents?ref=$BRANCH" | jq -r '.[] | select(.type == "file" and (.name | endswith(".json"))) | .name' | sed 's/\.json$//' 2>/dev/null)
-            else
-                folders=$(curl -s -f "$GITHUB_API/contents/.agents/$type?ref=$BRANCH" | jq -r '.[] | select(.type == "dir") | .name' 2>/dev/null)
-            fi
-        fi
-        
-        for folder in ${(f)folders}; do
-            if [ -n "$folder" ]; then
-                if download_asset "$type" "$folder" "$LOCAL_PATH/.agents"; then
-                    if [ "$type" = "skills" ]; then ((SYNC_COUNT_SKILLS++)); elif [ "$type" = "instructions" ]; then ((SYNC_COUNT_INST++)); else ((SYNC_COUNT_AGENTS++)); fi
-                fi
-            fi
-        done
+if [ ${#SELECTED_ITEMS[@]} -eq 0 ]; then
+    # Full Sync: All Techs
+    for tech in "${TECHS[@]}"; do
+        sync_tech "$tech" "$SRC_DIR"
     done
 else
     # Targeted Sync
-    for asset in "${SELECTED_ASSETS[@]}"; do
-        header "Searching for $asset"
-        found=false
-        
-        # Try as Agent first (priority)
-        if download_asset "agents" "$asset" "$LOCAL_PATH/.agents"; then
-            ((SYNC_COUNT_AGENTS++))
-            found=true
-        else
-            # Try as Instruction
-            if download_asset "instructions" "$asset" "$LOCAL_PATH/.agents"; then
-                ((SYNC_COUNT_INST++))
-                found=true
-            else
-                # Try as Skill
-                if download_asset "skills" "$asset" "$LOCAL_PATH/.agents"; then
-                    ((SYNC_COUNT_SKILLS++))
-                    found=true
-                fi
+    for item in "${SELECTED_ITEMS[@]}"; do
+        # Check if item is a technology
+        is_tech=false
+        for t in "${TECHS[@]}"; do
+            if [ "$item" = "$t" ]; then
+                is_tech=true
+                break
             fi
-        fi
+        done
         
-        if [ "$found" = false ]; then warn "Asset '$asset' not found in repo."; fi
+        if [ "$is_tech" = true ]; then
+            sync_tech "$item" "$SRC_DIR"
+        else
+            header "Searching for asset: $item"
+            found=false
+            # Try as Agent, then Instruction, then Skill
+            if find_and_download_asset "agents" "$item" "$SRC_DIR"; then
+                found=true
+            elif find_and_download_asset "instructions" "$item" "$SRC_DIR"; then
+                found=true
+            elif find_and_download_asset "skills" "$item" "$SRC_DIR"; then
+                found=true
+            fi
+            
+            if [ "$found" = false ]; then warn "Asset '$item' not found in any technology category."; fi
+        fi
     done
 fi
 
