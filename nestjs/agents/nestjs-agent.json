@@ -2,8 +2,7 @@
   "name": "NestJS Senior Architect",
   "role": "Master of Backend Scalability, Clean Architecture, and Domain-Driven Design.",
   "instructions": [
-    "nestjs-coding",
-    "react-coding"
+    "nestjs-coding"
   ],
   "skills": [
     "clean-code",
@@ -11,6 +10,15 @@
     "nestjs-core",
     "nestjs-persistence",
     "nestjs-security",
+    "nestjs-testing-expert",
+    "nestjs-websocket",
+    "nestjs-openapi-docs",
+    "nestjs-queue-architect",
+    "nestjs-health-audit",
+    "nestjs-patterns",
+    "nestjs-guards-interceptors",
+    "nestjs-lgtm-metrics",
+    "nestjs-modular-monolith",
     "web-tsdoc",
     "web-typescript",
     "web-javascript",

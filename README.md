@@ -173,6 +173,15 @@ Production-grade backend patterns using NestJS 10+.
 | `nestjs-core` | [SKILL.md](./nestjs/skills/nestjs-core/SKILL.md) | DI, Dynamic Modules, Interceptors & Filters. |
 | `nestjs-security` | [SKILL.md](./nestjs/skills/nestjs-security/SKILL.md) | JWT, Passport, Guards and RBAC. |
 | `nestjs-persistence` | [SKILL.md](./nestjs/skills/nestjs-persistence/SKILL.md) | Repository Pattern, Prisma/TypeORM & Mappers. |
+| `nestjs-testing-expert` | [SKILL.md](./nestjs/skills/nestjs-testing-expert/SKILL.md) | Advanced unit, integration, and E2E testing. |
+| `nestjs-websocket` | [SKILL.md](./nestjs/skills/nestjs-websocket/SKILL.md) | Real-time gateways, rooms, and socket.io. |
+| `nestjs-openapi-docs` | [SKILL.md](./nestjs/skills/nestjs-openapi-docs/SKILL.md) | Swagger integration and API documentation. |
+| `nestjs-queue-architect`| [SKILL.md](./nestjs/skills/nestjs-queue-architect/SKILL.md) | BullMQ background jobs and Redis queues. |
+| `nestjs-health-audit` | [SKILL.md](./nestjs/skills/nestjs-health-audit/SKILL.md) | Terminus health checks and readiness probes. |
+| `nestjs-patterns` | [SKILL.md](./nestjs/skills/nestjs-patterns/SKILL.md) | Strategy, Factory, and SOLID in NestJS. |
+| `nestjs-guards-interceptors` | [SKILL.md](./nestjs/skills/nestjs-guards-interceptors/SKILL.md) | Request lifecycle and response mapping. |
+| `nestjs-lgtm-metrics` | [SKILL.md](./nestjs/skills/nestjs-lgtm-metrics/SKILL.md) | Prometheus metrics, logging, and tracing. |
+| `nestjs-modular-monolith`| [SKILL.md](./nestjs/skills/nestjs-modular-monolith/SKILL.md) | Scaling with Bounded Contexts and DDD. |
 
 
 ### 🅰️ Angular Ecosystem
