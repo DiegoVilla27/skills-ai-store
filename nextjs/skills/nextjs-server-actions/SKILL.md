@@ -1,7 +1,8 @@
 ---
-description: 'Mastery of Server-Side Mutations and Data Revalidation'
-author: 'Diego Villanueva'
-trigger: 'When implementing form submissions, data mutations, or server-side logic triggered by the client.'
+name: nextjs-server-actions
+description: Mastery of Server-Side Mutations and Data Revalidation
+author: Diego Villanueva
+trigger: When implementing form submissions, data mutations, or server-side logic triggered by the client.
 ---
 
 # Next.js Server Actions

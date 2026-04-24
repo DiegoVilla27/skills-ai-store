@@ -1,11 +1,8 @@
 ---
 name: web-tsdoc
-description: >
-  TSDoc and API documentation standards for TypeScript projects.
-  Trigger: When documenting functions, interfaces, classes, or complex types.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: TSDoc and API documentation standards for TypeScript projects.
+author: Diego Villanueva
+trigger: When documenting functions, interfaces, classes, or complex types.
 ---
 
 ## Core Documentation Tags (REQUIRED)

@@ -1,11 +1,8 @@
 ---
 name: flutter-performance
-description: >
-  Optimization expert specialized in 60/120 FPS rendering and memory management.
-  Trigger: When optimizing rendering, fixing "jank," or managing high-resource assets.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Optimization expert specialized in 60/120 FPS rendering and memory management
+author: Diego Villanueva
+trigger: When optimizing rendering, fixing "jank," or managing high-resource assets.
 ---
 
 ## Rendering Optimization (REQUIRED)

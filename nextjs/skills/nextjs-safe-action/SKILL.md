@@ -1,7 +1,8 @@
 ---
-description: 'Typed and Validated Server Actions with next-safe-action'
-author: 'Diego Villanueva'
-trigger: 'When using the next-safe-action library to build robust server-side mutations.'
+name: nextjs-safe-action
+description: Typed and Validated Server Actions with next-safe-action
+author: Diego Villanueva
+trigger: When using the next-safe-action library to build robust server-side mutations.
 ---
 
 # Next Safe Action

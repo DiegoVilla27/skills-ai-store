@@ -1,7 +1,8 @@
 ---
-description: 'Database Integration and Type-Safe Queries with Prisma'
-author: 'Diego Villanueva'
-trigger: 'When implementing database schemas, migrations, or data access layers with Prisma.'
+name: nextjs-orm-prisma
+description: Database Integration and Type-Safe Queries with Prisma
+author: Diego Villanueva
+trigger: When implementing database schemas, migrations, or data access layers with Prisma.
 ---
 
 # Next.js + Prisma ORM

@@ -1,7 +1,8 @@
 ---
-description: 'Performance Optimization with Caching and ISR'
-author: 'Diego Villanueva'
-trigger: 'When implementing Incremental Static Regeneration, caching strategies, or revalidation.'
+name: nextjs-caching-isr
+description: Performance Optimization with Caching and ISR
+author: Diego Villanueva
+trigger: When implementing Incremental Static Regeneration, caching strategies, or revalidation.
 ---
 
 # Next.js Caching & ISR

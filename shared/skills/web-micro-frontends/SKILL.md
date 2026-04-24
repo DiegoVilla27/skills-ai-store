@@ -1,11 +1,8 @@
 ---
 name: web-micro-frontends
-description: >
-  Distributed frontend architectures using Module Federation and Vite.
-  Trigger: When breaking down monoliths, orchestrating multi-team repositories, or setting up host/remote communication.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Distributed frontend architectures using Module Federation and Vite.
+author: Diego Villanueva
+trigger: When breaking down monoliths, orchestrating multi-team repositories, or setting up host/remote communication.
 ---
 
 ## Module Federation (REQUIRED)

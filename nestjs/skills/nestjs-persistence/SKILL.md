@@ -1,11 +1,8 @@
 ---
 name: nestjs-persistence
-description: >
-  Professional persistence patterns: Repository Pattern and Data Mappers.
-  Trigger: When implementing database access, ORM integration, or data mapping.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Professional persistence patterns Repository Pattern and Data Mappers.
+author: Diego Villanueva
+trigger: When implementing database access, ORM integration, or data mapping.
 ---
 
 # NestJS Persistence & ORM Mastery

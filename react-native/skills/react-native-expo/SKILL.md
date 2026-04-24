@@ -1,7 +1,8 @@
 ---
-description: 'Managed Workflow and Universal Development with Expo'
-author: 'Diego Villanueva'
-trigger: 'When using Expo for cross-platform mobile development, managed plugins, or OTA updates.'
+name: react-native-expo
+description: Managed Workflow and Universal Development with Expo
+author: Diego Villanueva
+trigger: When using Expo for cross-platform mobile development, managed plugins, or OTA updates.
 ---
 
 # React Native + Expo

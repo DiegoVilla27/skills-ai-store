@@ -1,11 +1,8 @@
 ---
 name: next-core
-description: >
-  Next.js 15 App Router patterns.
-  Trigger: When working with Next.js - routing, Server Actions, data fetching.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Next.js 15 App Router patterns.
+author: Diego Villanueva
+trigger: When working with Next.js - routing, Server Actions, data fetching.
 ---
 
 ## App Router File Conventions

@@ -1,11 +1,8 @@
 ---
 name: nestjs-core
-description: >
-  Core NestJS patterns: Dependency Injection, Modules, and Global Concerns.
-  Trigger: When configuring modules, providers, or global application logic.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Core NestJS patterns Dependency Injection Modules and Global Concerns.
+author: Diego Villanueva
+trigger: When configuring modules, providers, or global application logic.
 ---
 
 # NestJS Core Mastery

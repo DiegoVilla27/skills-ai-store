@@ -1,7 +1,8 @@
 ---
-description: 'Request Lifecycle: Security Guards and Data Interceptors'
-author: 'Diego Villanueva'
-trigger: 'When implementing authorization logic, data transformation, or logging.'
+name: nestjs-guards-interceptors
+description: Request Lifecycle Security Guards and Data Interceptors
+author: Diego Villanueva
+trigger: When implementing authorization logic, data transformation, or logging.
 ---
 
 # NestJS Guards & Interceptors

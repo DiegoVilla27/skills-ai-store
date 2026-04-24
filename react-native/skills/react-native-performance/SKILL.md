@@ -1,7 +1,8 @@
 ---
-description: 'Mobile Optimization, Memory Management, and FPS Stability'
-author: 'Diego Villanueva'
-trigger: 'When optimizing app startup, list rendering, or memory consumption.'
+name: react-native-performance
+description: Mobile Optimization, Memory Management, and FPS Stability
+author: Diego Villanueva
+trigger: When optimizing app startup, list rendering, or memory consumption.
 ---
 
 # React Native Performance

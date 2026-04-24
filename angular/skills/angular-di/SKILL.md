@@ -1,7 +1,8 @@
 ---
-description: 'Dependency Injection Mastery and Service Architecture'
-author: 'Diego Villanueva'
-trigger: 'When defining services, injection tokens, or complex DI trees.'
+name: angular-di
+description: Dependency Injection Mastery and Service Architecture
+author: Diego Villanueva
+trigger: When defining services, injection tokens, or complex DI trees.
 ---
 
 # Angular Dependency Injection (DI)

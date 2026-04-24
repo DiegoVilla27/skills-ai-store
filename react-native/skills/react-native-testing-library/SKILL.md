@@ -1,7 +1,8 @@
 ---
-description: 'User-Centric Testing for React Native Components'
-author: 'Diego Villanueva'
-trigger: 'When implementing unit and integration tests for mobile components.'
+name: react-native-testing-library
+description: User-Centric Testing for React Native Components
+author: Diego Villanueva
+trigger: When implementing unit and integration tests for mobile components.
 ---
 
 # React Native Testing Library

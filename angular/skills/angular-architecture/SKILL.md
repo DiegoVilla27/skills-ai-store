@@ -1,11 +1,8 @@
 ---
 name: angular-architecture
-description: >
-  Angular architecture: Scope Rule, project structure, file naming, style guide.
-  Trigger: When structuring Angular projects or deciding where to place components.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Angular architecture Scope Rule, project structure, file naming, style guide.
+author: Diego Villanueva
+trigger: When structuring Angular projects or deciding where to place components.
 ---
 
 ## The Scope Rule (REQUIRED)

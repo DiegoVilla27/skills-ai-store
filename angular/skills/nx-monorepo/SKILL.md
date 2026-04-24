@@ -1,7 +1,8 @@
 ---
-description: 'Scaling Angular with Nx and Monorepo Architecture'
-author: 'Diego Villanueva'
-trigger: 'When working in monorepos, managing multiple apps/libs, or optimizing CI/CD.'
+name: nx-monorepo
+description: Scaling Angular with Nx and Monorepo Architecture
+author: Diego Villanueva
+trigger: When working in monorepos, managing multiple apps/libs, or optimizing CI/CD.
 ---
 
 # Nx & Monorepo Architecture

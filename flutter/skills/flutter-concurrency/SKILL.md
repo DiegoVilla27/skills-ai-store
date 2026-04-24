@@ -1,7 +1,8 @@
 ---
-description: 'Multithreading and Background Processing with Isolates'
-author: 'Diego Villanueva'
-trigger: 'When performing heavy computations, file processing, or high-frequency tasks.'
+name: flutter-concurrency
+description: Multithreading and Background Processing with Isolates
+author: Diego Villanueva
+trigger: When performing heavy computations, file processing, or high-frequency tasks.
 ---
 
 # Flutter Concurrency & Isolates

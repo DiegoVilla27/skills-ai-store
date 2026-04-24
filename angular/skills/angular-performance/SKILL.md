@@ -1,11 +1,8 @@
 ---
 name: angular-performance
-description: >
-  Angular performance: NgOptimizedImage, @defer, lazy loading, SSR.
-  Trigger: When optimizing Angular app performance, images, or lazy loading.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Angular performance: NgOptimizedImage, @defer, lazy loading, SSR
+author: Diego Villanueva
+trigger: When optimizing Angular app performance, images, or lazy loading
 ---
 
 ## NgOptimizedImage (REQUIRED for images)

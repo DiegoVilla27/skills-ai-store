@@ -1,7 +1,8 @@
 ---
-description: 'Type-safe API Communication with HttpClient'
-author: 'Diego Villanueva'
-trigger: 'When implementing API services, interceptors, or HTTP calls.'
+name: angular-http
+description: Type-safe API Communication with HttpClient
+author: Diego Villanueva
+trigger: When implementing API services, interceptors, or HTTP calls.
 ---
 
 # Angular HTTP & API Integration

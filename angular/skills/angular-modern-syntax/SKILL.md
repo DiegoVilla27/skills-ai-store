@@ -1,7 +1,8 @@
 ---
-description: 'Control Flow, Deferrable Views, and Modern Template Syntax'
-author: 'Diego Villanueva'
-trigger: 'When building templates or optimizing UI loading performance.'
+name: angular-modern-syntax
+description: Control Flow, Deferrable Views, and Modern Template Syntax
+author: Diego Villanueva
+trigger: When building templates or optimizing UI loading performance.
 ---
 
 # Angular Modern Syntax

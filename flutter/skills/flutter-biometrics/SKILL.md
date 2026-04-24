@@ -1,11 +1,8 @@
 ---
 name: flutter-biometrics
-description: >
-  Expert in implementing robust and reliable biometric authentication (Face ID, Fingerprint).
-  Trigger: When adding or configuring biometric authentication layers in Flutter.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Expert in implementing robust and reliable biometric authentication (Face ID, Fingerprint).
+author: Diego Villanueva
+trigger: When adding or configuring biometric authentication layers in Flutter.
 ---
 
 ## Biometric Pipeline (REQUIRED)

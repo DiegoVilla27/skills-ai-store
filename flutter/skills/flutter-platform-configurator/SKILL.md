@@ -1,11 +1,8 @@
 ---
 name: flutter-platform-configurator
-description: >
-  Expert in bridging Flutter with native Android/iOS configurations and build pipelines.
-  Trigger: When configuring permissions, native dependencies (Gradle/CocoaPods), or store requirements.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Expert in bridging Flutter with native Android/iOS configurations and build pipelines
+author: Diego Villanueva
+trigger: When configuring permissions, native dependencies (Gradle/CocoaPods), or store requirements
 ---
 
 ## Native iOS Configuration (REQUIRED)

@@ -2,11 +2,9 @@
 name: next-routes
 description: >
   Advanced Next.js 15 routing patterns: Parallel Routes, Intercepting Routes (Modals), 
-  Streaming UI, and SEO Metadata. Trigger: When implementing complex layouts, 
-  modals controlled by URL, or optimizing page rendering.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+  Streaming UI, and SEO Metadata. 
+author: Diego Villanueva
+trigger: When implementing complex layouts, modals controlled by URL, or optimizing page rendering.
 ---
 
 # Next.js App Router Patterns

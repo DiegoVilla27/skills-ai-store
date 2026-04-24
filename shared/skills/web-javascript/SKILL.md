@@ -1,11 +1,8 @@
 ---
 name: web-javascript
-description: >
-  Senior-level JavaScript fundamentals and runtime behavior.
-  Trigger: When writing pure JavaScript logic, utility functions, or optimizing runtime performance.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Senior-level JavaScript fundamentals and runtime behavior.
+author: Diego Villanueva
+trigger: When writing pure JavaScript logic, utility functions, or optimizing runtime performance.
 ---
 
 ## Event Loop & Macrotasks (REQUIRED)

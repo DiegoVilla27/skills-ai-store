@@ -1,7 +1,8 @@
 ---
-description: 'Advanced Unit and Integration Testing with Jest'
-author: 'Diego Villanueva'
-trigger: 'When implementing tests for controllers, services, or modules in NestJS.'
+name: nestjs-testing-expert
+description: Advanced Unit and Integration Testing with Jest
+author: Diego Villanueva
+trigger: When implementing tests for controllers, services, or modules in NestJS.
 ---
 
 # NestJS Testing Expert

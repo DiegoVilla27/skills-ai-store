@@ -1,7 +1,8 @@
 ---
-description: 'Advanced Material 3 Theming and Design Systems'
-author: 'Diego Villanueva'
-trigger: 'When defining app-wide styles, dark mode support, or custom design systems.'
+name: flutter-theming
+description: Advanced Material 3 Theming and Design Systems
+author: Diego Villanueva
+trigger: When defining app-wide styles, dark mode support, or custom design systems.
 ---
 
 # Flutter Theming & Design Systems

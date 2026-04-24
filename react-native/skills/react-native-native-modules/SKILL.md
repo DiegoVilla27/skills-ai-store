@@ -1,7 +1,8 @@
 ---
-description: 'Bridging JavaScript and Native Code (Swift/Kotlin)'
-author: 'Diego Villanueva'
-trigger: 'When implementing features that require direct access to iOS/Android APIs.'
+name: react-native-native-modules
+description: Bridging JavaScript and Native Code (Swift/Kotlin)
+author: Diego Villanueva
+trigger: When implementing features that require direct access to iOS/Android APIs.
 ---
 
 # React Native Native Modules

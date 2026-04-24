@@ -1,7 +1,8 @@
 ---
-description: 'Production-ready Animations and Gesture Handling'
-author: 'Diego Villanueva'
-trigger: 'When implementing micro-interactions, layout transitions, or complex gesture-based UI.'
+name: framer-motion
+description: Production-ready Animations and Gesture Handling
+author: Diego Villanueva
+trigger: When implementing micro-interactions, layout transitions, or complex gesture-based UI.
 ---
 
 # Framer Motion

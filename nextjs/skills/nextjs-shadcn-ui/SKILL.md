@@ -1,7 +1,8 @@
 ---
-description: 'Premium UI Construction with Shadcn/UI and Tailwind'
-author: 'Diego Villanueva'
-trigger: 'When building modern, accessible, and themeable UI components in Next.js.'
+name: nextjs-shadcn-ui
+description: Premium UI Construction with Shadcn/UI and Tailwind
+author: Diego Villanueva
+trigger: When building modern, accessible, and themeable UI components in Next.js.
 ---
 
 # Next.js + Shadcn/UI

@@ -1,7 +1,8 @@
 ---
-description: 'Server-Side Rendering (SSR) and Performance Hydration'
-author: 'Diego Villanueva'
-trigger: 'When implementing SSR, SSG, or optimizing initial load performance.'
+name: angular-ssr-hydration
+description: Server-Side Rendering (SSR) and Performance Hydration
+author: Diego Villanueva
+trigger: When implementing SSR, SSG, or optimizing initial load performance.
 ---
 
 # Angular SSR & Hydration

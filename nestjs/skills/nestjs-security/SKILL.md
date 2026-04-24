@@ -1,11 +1,8 @@
 ---
 name: nestjs-security
-description: >
-  Robust NestJS security: JWT, Passport Strategies, and RBAC.
-  Trigger: When implementing authentication, authorization, or role management.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Robust NestJS security JWT, Passport Strategies, and RBAC.
+author: Diego Villanueva
+trigger: When implementing authentication, authorization, or role management.
 ---
 
 # NestJS Security & Authorization

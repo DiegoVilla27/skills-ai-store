@@ -1,7 +1,8 @@
 ---
-description: 'High-Performance Persistence and Offline-First Architecture'
-author: 'Diego Villanueva'
-trigger: 'When implementing local storage, offline data sync, or caching.'
+name: mobile-offline-support
+description: High-Performance Persistence and Offline-First Architecture
+author: Diego Villanueva
+trigger: When implementing local storage, offline data sync, or caching.
 ---
 
 # Mobile Offline-First

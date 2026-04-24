@@ -1,11 +1,8 @@
 ---
 name: angular-forms
-description: >
-  Angular forms: Signal Forms (experimental) and Reactive Forms.
-  Trigger: When working with forms, validation, or form state in Angular.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Angular forms Signal Forms (experimental) and Reactive Forms.
+author: Diego Villanueva
+trigger: When working with forms, validation, or form state in Angular.
 ---
 
 ## When to Use What

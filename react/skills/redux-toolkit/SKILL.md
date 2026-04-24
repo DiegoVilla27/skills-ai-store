@@ -1,7 +1,8 @@
 ---
-description: 'Enterprise State Management with RTK and RTK Query'
-author: 'Diego Villanueva'
-trigger: 'When working in large-scale enterprise applications requiring strict state patterns.'
+name: redux-toolkit
+description: Enterprise State Management with RTK and RTK Query
+author: Diego Villanueva
+trigger: When working in large-scale enterprise applications requiring strict state patterns.
 ---
 
 # Redux Toolkit (RTK)

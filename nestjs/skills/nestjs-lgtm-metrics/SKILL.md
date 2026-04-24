@@ -1,7 +1,8 @@
 ---
-description: 'Full-stack Observability with Prometheus and Grafana'
-author: 'Diego Villanueva'
-trigger: 'When implementing metrics, logging, and performance monitoring.'
+name: nestjs-lgtm-metrics
+description: Full-stack Observability with Prometheus and Grafana
+author: Diego Villanueva
+trigger: When implementing metrics, logging, and performance monitoring.
 ---
 
 # NestJS Observability (LGTM)

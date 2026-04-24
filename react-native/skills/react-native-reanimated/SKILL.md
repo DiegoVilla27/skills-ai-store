@@ -1,7 +1,8 @@
 ---
-description: 'High-Performance 60fps Animations and Gestures'
-author: 'Diego Villanueva'
-trigger: 'When implementing complex UI animations, scroll effects, or gesture-based interactions.'
+name: react-native-reanimated
+description: High-Performance 60fps Animations and Gestures
+author: Diego Villanueva
+trigger: When implementing complex UI animations, scroll effects, or gesture-based interactions.
 ---
 
 # React Native Reanimated

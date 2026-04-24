@@ -1,7 +1,8 @@
 ---
-description: 'Advanced Declarative Routing and Guards'
-author: 'Diego Villanueva'
-trigger: 'When implementing navigation, lazy-loaded routes, or route guards.'
+name: angular-routing
+description: Advanced Declarative Routing and Guards
+author: Diego Villanueva
+trigger: When implementing navigation, lazy-loaded routes, or route guards.
 ---
 
 # Angular Routing & Navigation

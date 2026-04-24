@@ -1,11 +1,8 @@
 ---
 name: web-advanced-ui-ux
-description: >
-  Advanced styling and modern CSS techniques for premium user experiences.
-  Trigger: When designing complex layouts, component-level responsiveness, or scalable design systems.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Advanced styling and modern CSS techniques for premium user experiences.
+author: Diego Villanueva
+trigger: When designing complex layouts, component-level responsiveness, or scalable design systems.
 ---
 
 ## Container Queries (REQUIRED)

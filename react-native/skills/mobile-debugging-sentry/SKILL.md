@@ -1,7 +1,8 @@
 ---
-description: 'Error Tracking and Performance Monitoring for Mobile'
-author: 'Diego Villanueva'
-trigger: 'When implementing error boundaries, crash reporting, or performance tracing.'
+name: mobile-debugging-sentry
+description: Error Tracking and Performance Monitoring for Mobile
+author: Diego Villanueva
+trigger: When implementing error boundaries, crash reporting, or performance tracing.
 ---
 
 # Mobile Observability (Sentry)

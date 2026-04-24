@@ -1,7 +1,8 @@
 ---
-description: 'Application Reliability and Health Monitoring'
-author: 'Diego Villanueva'
-trigger: 'When implementing health checks, readiness probes, or monitoring endpoints.'
+name: nestjs-health-audit
+description: Application Reliability and Health Monitoring
+author: Diego Villanueva
+trigger: When implementing health checks, readiness probes, or monitoring endpoints.
 ---
 
 # NestJS Health & Reliability

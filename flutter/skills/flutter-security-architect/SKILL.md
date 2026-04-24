@@ -1,11 +1,8 @@
 ---
 name: flutter-security
-description: >
-  Security specialist focused on data integrity and secure storage.
-  Trigger: When handling sensitive data, tokens, or encryption in Flutter.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Security specialist focused on data integrity and secure storage
+author: Diego Villanueva
+trigger: When handling sensitive data, tokens, or encryption in Flutter
 ---
 
 ## Secure Storage (REQUIRED)

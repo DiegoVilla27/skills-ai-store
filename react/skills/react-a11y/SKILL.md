@@ -1,7 +1,8 @@
 ---
-description: 'Accessibility and Inclusive UI Standards'
-author: 'Diego Villanueva'
-trigger: 'When building UI components, forms, or custom interactive elements.'
+name: react-a11y
+description: Accessibility and Inclusive UI Standards
+author: Diego Villanueva
+trigger: When building UI components, forms, or custom interactive elements.
 ---
 
 # React Accessibility (a11y)

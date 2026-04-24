@@ -1,11 +1,8 @@
 ---
 name: conventional-commits
-description: >
-  Expert in maintaining an impeccable, readable, and semantic Git history.
-  Trigger: When writing git commit messages or documenting changes.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Expert in maintaining an impeccable, readable, and semantic Git history.
+author: Diego Villanueva
+trigger: When writing git commit messages or documenting changes.
 ---
 
 ## Commit Standard Format (REQUIRED)

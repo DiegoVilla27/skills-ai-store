@@ -1,11 +1,8 @@
 ---
 name: web-tailwind
-description: >
-  Tailwind CSS 4 patterns and best practices.
-  Trigger: When styling with Tailwind - cn(), theme variables, no var() in className.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Tailwind CSS 4 patterns and best practices.
+author: Diego Villanueva
+trigger: When styling with Tailwind - cn(), theme variables, no var() in className.
 ---
 
 ## Styling Decision Tree

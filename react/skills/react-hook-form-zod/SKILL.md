@@ -1,7 +1,8 @@
 ---
-description: 'Schema-based Validation for React Hook Form'
-author: 'Diego Villanueva'
-trigger: 'When implementing Zod validation schemas within React Hook Form.'
+name: react-hook-form-zod
+description: Schema-based Validation for React Hook Form
+author: Diego Villanueva
+trigger: When implementing Zod validation schemas within React Hook Form.
 ---
 
 # React Hook Form + Zod

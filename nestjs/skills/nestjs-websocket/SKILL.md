@@ -1,7 +1,8 @@
 ---
-description: 'Real-time Bidirectional Communication with WebSockets'
-author: 'Diego Villanueva'
-trigger: 'When implementing chat systems, real-time notifications, or live data updates.'
+name: nestjs-websocket
+description: Real-time Bidirectional Communication with WebSockets
+author: Diego Villanueva
+trigger: When implementing chat systems, real-time notifications, or live data updates.
 ---
 
 # NestJS WebSockets

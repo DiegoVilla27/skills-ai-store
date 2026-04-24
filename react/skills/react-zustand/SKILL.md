@@ -1,11 +1,8 @@
 ---
 name: react-zustand
-description: >
-  Zustand state management patterns.
-  Trigger: When managing React state with Zustand.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Zustand state management patterns
+author: Diego Villanueva
+trigger: When managing React state with Zustand
 ---
 
 ## Basic Store

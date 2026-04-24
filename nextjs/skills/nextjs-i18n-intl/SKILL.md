@@ -1,7 +1,8 @@
 ---
-description: 'Advanced Internationalization with next-intl'
-author: 'Diego Villanueva'
-trigger: 'When implementing multi-language support, localized routes, or RTL.'
+name: nextjs-i18n-intl
+description: Advanced Internationalization with next-intl
+author: Diego Villanueva
+trigger: When implementing multi-language support, localized routes, or RTL.
 ---
 
 # Next.js i18n (next-intl)

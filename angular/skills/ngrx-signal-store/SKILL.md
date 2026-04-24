@@ -1,7 +1,8 @@
 ---
-description: 'Lightweight and Opinionated State Management with Signals'
-author: 'Diego Villanueva'
-trigger: 'When implementing global or feature-level state management using NgRx SignalStore.'
+name: ngrx-signal-store
+description: Lightweight and Opinionated State Management with Signals
+author: Diego Villanueva
+trigger: When implementing global or feature-level state management using NgRx SignalStore.
 ---
 
 # NgRx SignalStore

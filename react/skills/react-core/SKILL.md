@@ -1,11 +1,8 @@
 ---
 name: react-core
-description: >
-  React 19 patterns with React Compiler.
-  Trigger: When writing React components - no useMemo/useCallback needed.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: React 19 patterns with React Compiler
+author: Diego Villanueva
+trigger: When writing React components - no useMemo/useCallback needed.
 ---
 
 ## No Manual Memoization (REQUIRED)

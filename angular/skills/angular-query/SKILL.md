@@ -1,7 +1,8 @@
 ---
-description: 'TanStack Query for Angular - Server State Management'
-author: 'Diego Villanueva'
-trigger: 'When implementing caching, syncing, and updating server state.'
+name: angular-query
+description: TanStack Query for Angular - Server State Management
+author: Diego Villanueva
+trigger: When implementing caching, syncing, and updating server state.
 ---
 
 # Angular Query (TanStack Query)

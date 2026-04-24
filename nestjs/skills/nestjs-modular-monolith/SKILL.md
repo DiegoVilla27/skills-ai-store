@@ -1,7 +1,8 @@
 ---
-description: 'Scaling Complex Backends with Modular Architecture'
-author: 'Diego Villanueva'
-trigger: 'When designing large-scale applications with multiple domain modules.'
+name: nestjs-modular-monolith
+description: Scaling Complex Backends with Modular Architecture
+author: Diego Villanueva
+trigger: When designing large-scale applications with multiple domain modules.
 ---
 
 # NestJS Modular Monolith

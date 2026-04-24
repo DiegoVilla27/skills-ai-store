@@ -1,7 +1,8 @@
 ---
-description: 'Complex Navigation Structures and Deep Linking'
-author: 'Diego Villanueva'
-trigger: 'When implementing nested navigators, shared element transitions, or deep linking.'
+name: react-native-navigation-advanced
+description: Complex Navigation Structures and Deep Linking
+author: Diego Villanueva
+trigger: When implementing nested navigators, shared element transitions, or deep linking.
 ---
 
 # Advanced React Native Navigation

@@ -1,7 +1,8 @@
 ---
-description: 'Official UI Components and Component Dev Kit (CDK)'
-author: 'Diego Villanueva'
-trigger: 'When using Angular Material components or building custom UI behaviors with CDK.'
+name: angular-material-cdk
+description: Official UI Components and Component Dev Kit (CDK)
+author: Diego Villanueva
+trigger: When using Angular Material components or building custom UI behaviors with CDK.
 ---
 
 # Angular Material & CDK

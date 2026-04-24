@@ -1,7 +1,8 @@
 ---
-description: 'Mastery of Observables, Streams, and Functional Reactive Programming'
-author: 'Diego Villanueva'
-trigger: 'When implementing complex data streams, real-time updates, or event orchestration.'
+name: rxjs-advanced
+description: Mastery of Observables, Streams, and Functional Reactive Programming
+author: Diego Villanueva
+trigger: When implementing complex data streams, real-time updates, or event orchestration.
 ---
 
 # Advanced RxJS

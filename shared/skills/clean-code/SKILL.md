@@ -1,11 +1,8 @@
 ---
 name: clean-code
-description: >
-  Guardian of technical excellence and software sustainability.
-  Trigger: When writing or refactoring any code to ensure it is readable, testable, and evolvable.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Guardian of technical excellence and software sustainability.
+author: Diego Villanueva
+trigger: When writing or refactoring any code to ensure it is readable, testable, and evolvable.
 ---
 
 ## Universal Design Principles (REQUIRED)

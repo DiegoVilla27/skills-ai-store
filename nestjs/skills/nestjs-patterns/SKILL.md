@@ -1,7 +1,8 @@
 ---
-description: 'Design Patterns and Enterprise Architecture in NestJS'
-author: 'Diego Villanueva'
-trigger: 'When designing complex system logic or choosing architectural patterns.'
+name: nestjs-patterns
+description: Design Patterns and Enterprise Architecture in NestJS
+author: Diego Villanueva
+trigger: When designing complex system logic or choosing architectural patterns.
 ---
 
 # NestJS Design Patterns

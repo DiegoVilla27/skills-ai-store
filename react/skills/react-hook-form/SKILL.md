@@ -1,7 +1,8 @@
 ---
-description: 'Performant and Flexible Form Management'
-author: 'Diego Villanueva'
-trigger: 'When building complex forms, multi-step wizards, or high-performance inputs.'
+name: react-hook-form
+description: Performant and Flexible Form Management
+author: Diego Villanueva
+trigger: When building complex forms, multi-step wizards, or high-performance inputs.
 ---
 
 # React Hook Form

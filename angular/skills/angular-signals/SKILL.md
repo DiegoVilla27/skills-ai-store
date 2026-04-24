@@ -1,7 +1,8 @@
 ---
-description: 'Modern Reactive State with Angular Signals'
-author: 'Diego Villanueva'
-trigger: 'When implementing component state, computed values, or fine-grained reactivity.'
+name: angular-signals
+description: Modern Reactive State with Angular Signals
+author: Diego Villanueva
+trigger: When implementing component state, computed values, or fine-grained reactivity.
 ---
 
 # Angular Signals & Reactivity

@@ -1,7 +1,8 @@
 ---
-description: 'Native-like Page Transitions using Browser View Transitions API'
-author: 'Diego Villanueva'
-trigger: 'When implementing route transitions or element morphing across views.'
+name: react-view-transitions
+description: Native-like Page Transitions using Browser View Transitions API
+author: Diego Villanueva
+trigger: When implementing route transitions or element morphing across views.
 ---
 
 # React View Transitions

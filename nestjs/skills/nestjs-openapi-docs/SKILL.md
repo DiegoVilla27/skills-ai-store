@@ -1,7 +1,8 @@
 ---
-description: 'Automated API Documentation with Swagger/OpenAPI'
-author: 'Diego Villanueva'
-trigger: 'When documenting REST APIs, defining DTOs, or setting up Swagger UI.'
+name: nestjs-openapi-docs
+description: Automated API Documentation with Swagger/OpenAPI
+author: Diego Villanueva
+trigger: When documenting REST APIs, defining DTOs, or setting up Swagger UI.
 ---
 
 # NestJS OpenAPI (Swagger)

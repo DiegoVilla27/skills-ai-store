@@ -1,11 +1,8 @@
 ---
 name: react-testing-jest
-description: >
-  The industry-standard testing stack for React using Jest.
-  Trigger: When writing unit or integration tests with Jest and React Testing Library.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: The industry-standard testing stack for React using Jest.
+author: Diego Villanueva
+trigger: When writing unit or integration tests with Jest and React Testing Library.
 ---
 
 ## Jest Mocking Strategy (REQUIRED)

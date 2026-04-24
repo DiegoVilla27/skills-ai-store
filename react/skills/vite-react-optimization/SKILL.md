@@ -1,7 +1,8 @@
 ---
-description: 'Optimizing Build and Development Performance with Vite'
-author: 'Diego Villanueva'
-trigger: 'When configuring build pipelines, bundle splitting, or optimizing HMR speed.'
+name: vite-react-optimization
+description: Optimizing Build and Development Performance with Vite
+author: Diego Villanueva
+trigger: When configuring build pipelines, bundle splitting, or optimizing HMR speed.
 ---
 
 # Vite + React Optimization

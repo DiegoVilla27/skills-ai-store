@@ -1,11 +1,8 @@
 ---
 name: flutter-testing
-description: >
-  Defender of stability specialized in the Flutter testing pyramid.
-  Trigger: When creating new features or fixing bugs to ensure zero regressions.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Defender of stability specialized in the Flutter testing pyramid
+author: Diego Villanueva
+trigger: When creating new features or fixing bugs to ensure zero regressions
 ---
 
 ## Balanced Testing Pyramid (REQUIRED)

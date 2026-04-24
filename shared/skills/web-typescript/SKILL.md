@@ -1,11 +1,8 @@
 ---
 name: web-typescript
-description: >
-  TypeScript strict patterns and best practices.
-  Trigger: When writing TypeScript code - types, interfaces, generics.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: TypeScript strict patterns and best practices.
+author: Diego Villanueva
+trigger: When writing TypeScript code - types, interfaces, generics.
 ---
 
 ## Const Types Pattern (REQUIRED)

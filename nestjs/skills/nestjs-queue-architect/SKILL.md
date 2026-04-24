@@ -1,7 +1,8 @@
 ---
-description: 'Background Task Management with BullMQ'
-author: 'Diego Villanueva'
-trigger: 'When implementing background jobs, email sending, or heavy data processing.'
+name: nestjs-queue-architect
+description: Background Task Management with BullMQ
+author: Diego Villanueva
+trigger: When implementing background jobs, email sending, or heavy data processing.
 ---
 
 # NestJS Queue Architect

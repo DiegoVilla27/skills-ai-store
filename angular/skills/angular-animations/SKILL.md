@@ -1,7 +1,8 @@
 ---
-description: 'Complex UI Transitions and Browser Animations API'
-author: 'Diego Villanueva'
-trigger: 'When implementing micro-interactions, page transitions, or state-based animations.'
+name: angular-animations
+description: Complex UI Transitions and Browser Animations API
+author: Diego Villanueva
+trigger: When implementing micro-interactions, page transitions, or state-based animations.
 ---
 
 # Angular Animations

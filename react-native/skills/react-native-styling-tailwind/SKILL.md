@@ -1,7 +1,8 @@
 ---
-description: 'Utility-First Styling for Mobile with NativeWind'
-author: 'Diego Villanueva'
-trigger: 'When implementing UI styles using Tailwind CSS in React Native.'
+name: react-native-styling-tailwind
+description: Utility-First Styling for Mobile with NativeWind
+author: Diego Villanueva
+trigger: When implementing UI styles using Tailwind CSS in React Native.
 ---
 
 # React Native + Tailwind (NativeWind)

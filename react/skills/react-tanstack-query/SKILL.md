@@ -1,11 +1,8 @@
 ---
 name: react-tanstack-query
-description: >
-  Server state management for React and Next.js (TanStack Query v5).
-  Trigger: When fetching data from an API, managing server state, or implementing caching and optimistic updates.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Server state management for React and Next.js (TanStack Query v5)
+author: Diego Villanueva
+trigger: When fetching data from an API, managing server state, or implementing caching and optimistic updates.
 ---
 
 ## Query Basics (REQUIRED)

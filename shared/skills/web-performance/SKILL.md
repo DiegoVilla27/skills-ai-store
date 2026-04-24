@@ -1,11 +1,8 @@
 ---
 name: web-performance
-description: >
-  Deep dive into Core Web Vitals and frontend optimization techniques.
-  Trigger: When optimizing page speed, reducing bundle size, or fixing layout shifts (LCP, CLS, INP).
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Deep dive into Core Web Vitals and frontend optimization techniques.
+author: Diego Villanueva
+trigger: When optimizing page speed, reducing bundle size, or fixing layout shifts (LCP, CLS, INP).
 ---
 
 ## Core Web Vitals (REQUIRED)

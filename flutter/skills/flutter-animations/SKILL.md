@@ -1,7 +1,8 @@
 ---
-description: 'Mastering Flutter Animations and Visual Feedback'
-author: 'Diego Villanueva'
-trigger: 'When the user needs complex animations, transitions, or physics-based motion.'
+name: flutter-animations
+description: Mastering Flutter Animations and Visual Feedback
+author: Diego Villanueva
+trigger: When the user needs complex animations, transitions, or physics-based motion.
 ---
 
 # Flutter Animations & Motion

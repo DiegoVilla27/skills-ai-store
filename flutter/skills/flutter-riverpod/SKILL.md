@@ -1,11 +1,8 @@
 ---
 name: flutter-riverpod
-description: >
-  Riverpod expert focused on reactive data flow and code generation (@riverpod).
-  Trigger: When managing application state or injecting dependencies using Riverpod.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Riverpod expert focused on reactive data flow and code generation (@riverpod)
+author: Diego Villanueva
+trigger: When managing application state or injecting dependencies using Riverpod
 ---
 
 ## Code Generation Strategy (REQUIRED)

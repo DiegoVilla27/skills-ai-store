@@ -1,11 +1,8 @@
 ---
 name: flutter-architect
-description: >
-  Guardian of scalable, maintainable, and professional-grade Flutter codebases.
-  Trigger: When defining project structure, creating new screens, or organizing widgets.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Guardian of scalable, maintainable, and professional-grade Flutter codebases
+author: Diego Villanueva
+trigger: When defining project structure, creating new screens, or organizing widgets
 ---
 
 ## Atomic Scoping (REQUIRED)

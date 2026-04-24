@@ -1,7 +1,8 @@
 ---
-description: 'Offline-First Development and Local Persistence'
-author: 'Diego Villanueva'
-trigger: 'When implementing offline support, local databases, or image caching.'
+name: flutter-caching-offline
+description: Offline-First Development and Local Persistence
+author: Diego Villanueva
+trigger: When implementing offline support, local databases, or image caching.
 ---
 
 # Flutter Caching & Offline-First

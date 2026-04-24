@@ -1,7 +1,8 @@
 ---
-description: 'Search Engine Optimization and Dynamic Metadata'
-author: 'Diego Villanueva'
-trigger: 'When optimizing pages for SEO, social sharing, or dynamic metadata generation.'
+name: nextjs-seo-metadata
+description: Search Engine Optimization and Dynamic Metadata
+author: Diego Villanueva
+trigger: When optimizing pages for SEO, social sharing, or dynamic metadata generation.
 ---
 
 # Next.js SEO & Metadata

@@ -1,11 +1,8 @@
 ---
 name: react-native-core
-description: >
-  Foundational patterns for React Native and Expo mobile development.
-  Trigger: When starting a React Native project, building mobile UI, or optimizing list performance.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Foundational patterns for React Native and Expo mobile development.
+author: Diego Villanueva
+trigger: When starting a React Native project, building mobile UI, or optimizing list performance.
 ---
 
 ## Semantic Mobile UI (REQUIRED)

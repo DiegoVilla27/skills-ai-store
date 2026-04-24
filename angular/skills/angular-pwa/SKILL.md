@@ -1,7 +1,8 @@
 ---
-description: 'Progressive Web Apps and Service Workers'
-author: 'Diego Villanueva'
-trigger: 'When implementing offline support, push notifications, or app-like experiences.'
+name: angular-pwa
+description: Progressive Web Apps and Service Workers
+author: Diego Villanueva
+trigger: When implementing offline support, push notifications, or app-like experiences.
 ---
 
 # Angular PWA

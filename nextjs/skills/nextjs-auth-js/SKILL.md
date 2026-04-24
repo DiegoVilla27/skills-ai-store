@@ -1,7 +1,8 @@
 ---
-description: 'Authentication and Session Management with Auth.js (NextAuth)'
-author: 'Diego Villanueva'
-trigger: 'When implementing login, oauth providers, or session protection in Next.js.'
+name: nextjs-auth-js
+description: Authentication and Session Management with Auth.js (NextAuth)
+author: Diego Villanueva
+trigger: When implementing login, oauth providers, or session protection in Next.js.
 ---
 
 # Next.js Auth.js (NextAuth v5)

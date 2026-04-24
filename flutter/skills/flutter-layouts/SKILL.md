@@ -1,7 +1,8 @@
 ---
-description: 'Complex Layout Construction and Adaptive UI'
-author: 'Diego Villanueva'
-trigger: 'When building intricate UI structures, responsive layouts, or custom painting.'
+name: flutter-layouts
+description: Complex Layout Construction and Adaptive UI
+author: Diego Villanueva
+trigger: When building intricate UI structures, responsive layouts, or custom painting.
 ---
 
 # Flutter Layouts & Adaptive UI

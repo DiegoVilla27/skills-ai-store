@@ -1,7 +1,8 @@
 ---
-description: 'Standardized API Communication and JSON Parsing'
-author: 'Diego Villanueva'
-trigger: 'When implementing HTTP clients, API endpoints, or JSON serialization.'
+name: flutter-http-json
+description: Standardized API Communication and JSON Parsing
+author: Diego Villanueva
+trigger: When implementing HTTP clients, API endpoints, or JSON serialization.
 ---
 
 # Flutter HTTP & JSON

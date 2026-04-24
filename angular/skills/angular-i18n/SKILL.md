@@ -1,7 +1,8 @@
 ---
-description: 'Internationalization and Localization Best Practices'
-author: 'Diego Villanueva'
-trigger: 'When implementing multi-language support or localized formatting.'
+name: angular-i18n
+description: Internationalization and Localization Best Practices
+author: Diego Villanueva
+trigger: When implementing multi-language support or localized formatting.
 ---
 
 # Angular Internationalization (i18n)

@@ -1,7 +1,8 @@
 ---
-description: 'Authentication, Authorization, and Web Security'
-author: 'Diego Villanueva'
-trigger: 'When implementing login flows, route protection, or data sanitization.'
+name: angular-security
+description: Authentication, Authorization, and Web Security
+author: Diego Villanueva
+trigger: When implementing login flows, route protection, or data sanitization.
 ---
 
 # Angular Security

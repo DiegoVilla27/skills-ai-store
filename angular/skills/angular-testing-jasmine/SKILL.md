@@ -1,11 +1,8 @@
 ---
 name: angular-testing-jasmine
-description: >
-  Enterprise-standard testing for Angular using Jasmine and Karma.
-  Trigger: When writing unit or integration tests with Jasmine and Karma in Angular.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Enterprise-standard testing for Angular using Jasmine and Karma
+author: Diego Villanueva
+trigger: When writing unit or integration tests with Jasmine and Karma in Angular
 ---
 
 ## TestBed Setup (REQUIRED)

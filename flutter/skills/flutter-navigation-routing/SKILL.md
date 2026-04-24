@@ -1,7 +1,8 @@
 ---
-description: 'Declarative Routing and Deep Linking with GoRouter'
-author: 'Diego Villanueva'
-trigger: 'When implementing app navigation, deep links, or complex nested routing.'
+name: flutter-navigation-routing
+description: Declarative Routing and Deep Linking with GoRouter
+author: Diego Villanueva
+trigger: When implementing app navigation, deep links, or complex nested routing.
 ---
 
 # Flutter Navigation & Routing

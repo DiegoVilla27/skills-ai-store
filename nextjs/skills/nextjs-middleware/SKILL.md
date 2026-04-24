@@ -1,7 +1,8 @@
 ---
-description: 'Edge Logic, Security, and Routing with Middleware'
-author: 'Diego Villanueva'
-trigger: 'When implementing global route protection, redirects, or header manipulation.'
+name: nextjs-middleware
+description: Edge Logic, Security, and Routing with Middleware
+author: Diego Villanueva
+trigger: When implementing global route protection, redirects, or header manipulation.
 ---
 
 # Next.js Middleware

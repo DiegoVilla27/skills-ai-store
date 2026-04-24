@@ -1,11 +1,8 @@
 ---
 name: web-modern-testing
-description: >
-  Modern testing pyramid for web applications using Vitest, MSW, and Playwright.
-  Trigger: When writing unit, component, or end-to-end tests to ensure code reliability and accessibility.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Modern testing pyramid for web applications using Vitest, MSW, and Playwright.
+author: Diego Villanueva
+trigger: When writing unit, component, or end-to-end tests to ensure code reliability and accessibility.
 ---
 
 ## Accessibility-First Testing (REQUIRED)

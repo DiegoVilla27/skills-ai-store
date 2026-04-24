@@ -1,7 +1,8 @@
 ---
-description: 'Advanced TypeScript Patterns for React and Next.js'
-author: 'Diego Villanueva'
-trigger: 'When defining complex prop types, generic components, or strictly-typed hooks.'
+name: web-typescript-react
+description: Advanced TypeScript Patterns for React and Next.js
+author: Diego Villanueva
+trigger: When defining complex prop types, generic components, or strictly-typed hooks.
 ---
 
 # Advanced TypeScript for React

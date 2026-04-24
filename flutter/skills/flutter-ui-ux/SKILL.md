@@ -1,11 +1,8 @@
 ---
 name: flutter-ui-ux
-description: >
-  Specialist in premium user experiences, micro-interactions, and visual design.
-  Trigger: When designing UI components, overlays, or complex animations.
-metadata:
-  author: Diego Villanueva
-  version: "1.0"
+description: Specialist in premium user experiences, micro-interactions, and visual design
+author: Diego Villanueva
+trigger: When designing UI components, overlays, or complex animations
 ---
 
 ## Application States (REQUIRED)
