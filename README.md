@@ -50,15 +50,29 @@ lib/features/[name]/
 Integrate these expert-level engineering standards into any project in seconds.
 
 ### 1. Download the Synchronizer
-Run this command in the root of your project:
+Run the command corresponding to your operating system in the root of your project:
+
+#### 🍎 Mac / 🐧 Linux
 ```bash
 curl -O https://raw.githubusercontent.com/DiegoVilla27/agents-ai-store/main/async_agents.sh && chmod +x async_agents.sh
 ```
 
+#### 🪟 Windows (PowerShell)
+```powershell
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/DiegoVilla27/agents-ai-store/main/async_agents.ps1" -OutFile "async_agents.ps1"
+```
+
 ### 2. Synchronize Assets
 Sync everything (Skills + Instructions) with one command:
+
+#### 🍎 Mac / 🐧 Linux
 ```bash
 ./async_agents.sh
+```
+
+#### 🪟 Windows (PowerShell)
+```powershell
+.\async_agents.ps1
 ```
 
 ### 3. Start Coding
@@ -255,29 +269,21 @@ Ensuring software remains immune to regressions.
 
 ---
 
-## 🛠 Automation: `async_agents.sh`
+## 🛠 Automation: `async_agents`
 
 Integrate these skills and instructions into any project instantly. No manual copy-pasting required.
 
-### Usage:
-```bash
-# Give execution permissions
-chmod +x async_agents.sh
+### Commands by Platform:
 
-# Sync everything (all technologies)
-./async_agents.sh
+| Feature | 🍎 Mac / 🐧 Linux | 🪟 Windows (PowerShell) |
+|:---|:---|:---|
+| **Sync All** | `./async_agents.sh` | `.\async_agents.ps1` |
+| **Sync Tech** | `./async_agents.sh angular` | `.\async_agents.ps1 angular` |
+| **Sync Assets**| `./async_agents.sh react-core` | `.\async_agents.ps1 react-core` |
+| **Clean Sync** | `./async_agents.sh --clean` | `.\async_agents.ps1 -Clean` |
+| **Local Mode** | `./async_agents.sh --local path`| `.\async_agents.ps1 -Local path` |
 
-# Sync a specific technology stack (RECOMMENDED)
-./async_agents.sh angular
-./async_agents.sh react
-./async_agents.sh flutter
-
-# Sync specific assets
-./async_agents.sh react-core flutter-coding angular-performance
-
-# Use local store (Dev Mode)
-./async_agents.sh --local ~/path/to/store
-```
+> **Note**: Windows parameters use PascalCase (e.g., `-Clean`) while Unix parameters use kebab-case (e.g., `--clean`).
 
 ---
 
